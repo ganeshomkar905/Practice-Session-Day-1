@@ -1,0 +1,5 @@
+Hello This is Omkar Ganesh
+
+Welcome to my github repo
+Day 1 of AWS Devops session 
+Thanks
