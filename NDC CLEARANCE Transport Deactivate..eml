@@ -1,0 +1,265 @@
+Delivered-To: ganeshomkar905@gmail.com
+Received: by 2002:a05:7010:5b28:b0:533:7ff7:5a35 with SMTP id br40csp705629mdb;
+        Tue, 30 Jun 2026 02:47:51 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AHgh+RoyK/6+Yuz5HdeuS8z5jFwTn8OR+7JYcyItdb69+aq31ZNyU09SRkk+HUu7AC/kj4JGFyCRd6OzojYWE63LyA==@gmail.com
+X-Received: by 2002:a05:6a00:429b:b0:845:396f:5be7 with SMTP id d2e1a72fcca58-847add63aa0mr1157b3a.5.1782812870886;
+        Tue, 30 Jun 2026 02:47:50 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1782812870; cv=pass;
+        d=google.com; s=arc-20260327;
+        b=So1jUsPx8ALAJso7MjwfoX5kTq2vaTGtzPcG8i84mySHB/HYmc7AGjj9vceSTkA9wQ
+         ONnLSjDP3clgp/1ltZ8iWaWjqh7xugtrhj5IYxU5sGsYwbe8UnlxmBTvZc1MAqwst0bQ
+         RpgDGno6AwBsPFKJc4AM6nuCZBrpIlUJUtVhCoP1b9BYWcZBCoGT2XFckO9xaGu9rS06
+         +RyIn2IBI99v4R231UlAwfrfLNkjAbS9puAHn1uhRUxskJRzE/jod+gR7l3AVwJ50yHy
+         Y5FmBONW0YZzaYZhmIid7WfwAzEBTxWwd7MDKKiMBzMnnO46AuF7ELlyoBMHBHaXuEM8
+         wPEw==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=original-authentication-results:mime-version
+         :authentication-results-original:msip_labels:content-language
+         :accept-language:message-id:date:thread-index:thread-topic:subject
+         :to:from:dkim-signature:dkim-signature;
+        bh=Ts6Zhdr8vlbapVMUThTvf0LSQKyQhXsq50MraiOb8Yw=;
+        fh=KWGHnFkaFwSr7DOOVmfkPI57vHbwjTSjgGuZDDYJQKY=;
+        b=Ogl1pfhTxcKAzrJmwN7+D12bmEgXFsHaDir8G9HGTAE4n73xoBM6mW7YN/T9Zppj1W
+         NXryu2Juh6P3DRZQ4M9f3Bw9rM7hT77vj9cVeu7oN4YPB1FZazZotc/ydVCHGHM7cVrr
+         Dsculgm1782Boy0tLR1xyTmmMg/w4t2iKFQ/EWASMLgfx100pUqa6aWLJxeszw5d6eMU
+         o0xruxrUvhgov53fsrRv/PAycd6BQi7/FYbX5AVCmPX97EG/GBfNuxCyeOg3IkRsFSML
+         uOU2CJ+Pw9yopf4ukSED4OGYFvT+lr5xEmWrDwnxD16Nf89Swy0Nh4N7T9wV4F4KTtEO
+         YL5Q==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@contractor.tatacommunications.com header.s=selector1 header.b=icXtK2GJ;
+       dkim=pass header.i=@contractor.tatacommunications.com header.s=selector1 header.b=icXtK2GJ;
+       arc=pass (i=2 spf=pass spfdomain=contractor.tatacommunications.com dkim=pass dkdomain=contractor.tatacommunications.com dmarc=pass fromdomain=contractor.tatacommunications.com);
+       spf=pass (google.com: domain of omkar.ganesh@contractor.tatacommunications.com designates 2a01:111:f403:c405::7 as permitted sender) smtp.mailfrom=Omkar.Ganesh@contractor.tatacommunications.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=contractor.tatacommunications.com
+Return-Path: <Omkar.Ganesh@contractor.tatacommunications.com>
+Received: from TYDPR03CU002.outbound.protection.outlook.com (mail-japaneastazlp170130007.outbound.protection.outlook.com. [2a01:111:f403:c405::7])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-847a00fa9bfsi4105434b3a.77.2026.06.30.02.47.50
+        for <ganeshomkar905@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 30 Jun 2026 02:47:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of omkar.ganesh@contractor.tatacommunications.com designates 2a01:111:f403:c405::7 as permitted sender) client-ip=2a01:111:f403:c405::7;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@contractor.tatacommunications.com header.s=selector1 header.b=icXtK2GJ;
+       dkim=pass header.i=@contractor.tatacommunications.com header.s=selector1 header.b=icXtK2GJ;
+       arc=pass (i=2 spf=pass spfdomain=contractor.tatacommunications.com dkim=pass dkdomain=contractor.tatacommunications.com dmarc=pass fromdomain=contractor.tatacommunications.com);
+       spf=pass (google.com: domain of omkar.ganesh@contractor.tatacommunications.com designates 2a01:111:f403:c405::7 as permitted sender) smtp.mailfrom=Omkar.Ganesh@contractor.tatacommunications.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=contractor.tatacommunications.com
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=b6ptZweyIez+B5VjTuD7l9pcyKwLMD2m2OQ4Uy4ESeqbIC6LbXCNrenXtrYdrUJyUxen0s5t7rnxSXtRa+wwmH026bkLqRjNxIWNzxk5kUAWVo9x5RMgadEnScCNZHUkdnY5f/qyeI3kD3s3ooXo9obYlNMcv4Do2BWg/OcIFBkgKYgjEuyWKrPdbbZiz3vJMKmgMtrVkm9vjCsi4o2+vvegqSyeYiqAYKwO5AaZwtcGCSX1NoqVdug/wHy4DbHVzcT8jEOgezsG8CHgmh3XDPlJb8BcQzo5Pyn2mNstX5DHyIbUFDqHaIGjtbxFLcQQsgnMh/4jnAlYubQwEc5mjA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Ts6Zhdr8vlbapVMUThTvf0LSQKyQhXsq50MraiOb8Yw=;
+ b=mH7R7pVhOAbyeZEsQrkb5B13CJTergSJrC4uuq3nxiwJDMmZ+Ps+4H5kJRzEEavr167IFDZbf28rf/YaGhRX6zyqGjedNbOG7AXNDzGUsGJ1PmXZUczud8Lh/xbcjQJPzXRkZT2trarcSxbSs0UgUPyyXukFfv6jYAG/Ayeb+5a/HhKkOo0Ja/IOxfSLu1DE5mrCI4GbJvseLGzyaO1PT5QYHfe8s5WTpf8lPQHBg6ln8mtObZzmSrrQ8bHtE7wZL5HRVwpIx+ARCItEJoqOYNsduUEj+L48EQAnY1tCS6Y0rhwxm6mWYU/+dQAkSXbE+MiPesVt5KhkT0zBaurXEg==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 3.106.94.86) smtp.rcpttodomain=gmail.com
+ smtp.mailfrom=contractor.tatacommunications.com; dmarc=pass (p=reject
+ sp=reject pct=100) action=none header.from=contractor.tatacommunications.com;
+ dkim=pass (signature was verified)
+ header.d=contractor.tatacommunications.com; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=contractor.tatacommunications.com]
+ dkim=[1,1,header.d=contractor.tatacommunications.com]
+ dmarc=[1,1,header.from=contractor.tatacommunications.com])
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=contractor.tatacommunications.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ts6Zhdr8vlbapVMUThTvf0LSQKyQhXsq50MraiOb8Yw=;
+ b=icXtK2GJu/Tl7OBotzst1eLPHn3EPIkDhI/1RDf6QfHXoirZTD1Yr6HnaR6VxWkvzSGAjhqD/DZseWruo3A1mNbRGXM+WhereVeJe/IWzeg7UUDqnOcvVTgkaSqnF3uGVNpcr1wU+UZ3lEWjSI475cIV8yRqb6p2nhIHDnHXzHQ78Uhb+9ok6c/YUpmqAWafAALccpWLzfCHrGqvPDJ5IdcGo7v+2fK1LQ44+xwOz5y4OrJlajftgHV2RX5j7CDxOqQmDZ91Ir0U4lbNE2DWMV4mQDcWLblEFOrLgAe4vFFrD7HYLSNwPAXgzw6H0uLdYxuPc15SjOZ9NRgLMLpBsw==
+Received: from SI2PR01CA0021.apcprd01.prod.exchangelabs.com
+ (2603:1096:4:192::19) by OSQPR04MB8859.apcprd04.prod.outlook.com
+ (2603:1096:604:428::5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.19; Tue, 30 Jun
+ 2026 09:47:44 +0000
+Received: from SG2PEPF000B66CC.apcprd03.prod.outlook.com
+ (2603:1096:4:192:cafe::47) by SI2PR01CA0021.outlook.office365.com
+ (2603:1096:4:192::19) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.181.8 via Frontend Transport; Tue, 30
+ Jun 2026 09:47:44 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 3.106.94.86)
+ smtp.mailfrom=contractor.tatacommunications.com; dkim=pass (signature was
+ verified) header.d=contractor.tatacommunications.com;dmarc=pass action=none
+ header.from=contractor.tatacommunications.com;
+Received-SPF: Pass (protection.outlook.com: domain of
+ contractor.tatacommunications.com designates 3.106.94.86 as permitted sender)
+ receiver=protection.outlook.com; client-ip=3.106.94.86;
+ helo=harakainline2-0b2d913ca08e4ee3d; pr=C
+Received: from harakainline2-0b2d913ca08e4ee3d (3.106.94.86) by
+ SG2PEPF000B66CC.mail.protection.outlook.com (10.167.240.25) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.181.6 via Frontend Transport; Tue, 30 Jun 2026 09:47:43 +0000
+Received: from OS8PR02CU002.outbound.protection.outlook.com (mail-japanwestazon11012027.outbound.protection.outlook.com [40.107.75.27])
+	by harakainline2-0b2d913ca08e4ee3d (Haraka/2.8.24) with ESMTPS id CC254927-11AA-4337-9B95-2B53A4EE6429.1
+	envelope-from <Omkar.Ganesh@contractor.tatacommunications.com>
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 verify=FAIL);
+	Tue, 30 Jun 2026 09:47:40 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=W79E0jN6lRueuaWW6HJ6iNWa4Z9X9O5y8zQT/QKFa1jrcAZOA1+AJTWYctNHQclogGktjudUVoiGMwXWfsfCnwt3MwGpJaMCmdzpR02dkviyoE5j8ayj2TIbbd8HTMeaw3KNFmGB2ZueyHwKm5V8D0Dvl54DGrUOJR7L54ZpfA8S29r1YOQ6Yr4jmAHOHm2hcFN4GnyF/xhdRrphDfaE1W6eCflcIAKd77x/EbRPVp2MZ7Q/9+BvHCERUK8z1nKqN8iyJLV7QJoJbZ6UKlVzRlCN5seX20o5+FOLcBhV2AYqyoWYG37KmcyMuMPI/GkKWY9zzzPxvXoHOfr7+g6h1g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Ts6Zhdr8vlbapVMUThTvf0LSQKyQhXsq50MraiOb8Yw=;
+ b=UC7SwR1e8WEVsOBw45BOX9sYktHhdvbYYf5hVIN8TKjbrKurkWVRtumriReiFoxeNyYEcmK1ccRDQE+nWyWZlCtlKp/8Kfx+fqqS1eWtTCWom5Tf0GJlDu6VHXiR85Xm2Em1q2Z1Yl4+9boxjsbUgEBlWxViquDTRzv7P4h3G4GCy7f+T55GJFiWbjN58ae6Jo0RJkv3wsQprVD5YEMZgk7sUku+grY/CoR5PMAhy7vMKeY0DXroUq9Ro1eMcH768H4FZUatN8b6xLUu16l+bMGnFdFGLFuX9ZCJpfw3sOUQT6+8ch3Tig/oLTKnJYRFKyYhotGET7A4VujC7Uotmw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=contractor.tatacommunications.com; dmarc=pass action=none
+ header.from=contractor.tatacommunications.com; dkim=pass
+ header.d=contractor.tatacommunications.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=contractor.tatacommunications.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ts6Zhdr8vlbapVMUThTvf0LSQKyQhXsq50MraiOb8Yw=;
+ b=icXtK2GJu/Tl7OBotzst1eLPHn3EPIkDhI/1RDf6QfHXoirZTD1Yr6HnaR6VxWkvzSGAjhqD/DZseWruo3A1mNbRGXM+WhereVeJe/IWzeg7UUDqnOcvVTgkaSqnF3uGVNpcr1wU+UZ3lEWjSI475cIV8yRqb6p2nhIHDnHXzHQ78Uhb+9ok6c/YUpmqAWafAALccpWLzfCHrGqvPDJ5IdcGo7v+2fK1LQ44+xwOz5y4OrJlajftgHV2RX5j7CDxOqQmDZ91Ir0U4lbNE2DWMV4mQDcWLblEFOrLgAe4vFFrD7HYLSNwPAXgzw6H0uLdYxuPc15SjOZ9NRgLMLpBsw==
+Received: from SEYPR04MB7287.apcprd04.prod.outlook.com (2603:1096:101:165::13)
+ by SEYPR04MB9020.apcprd04.prod.outlook.com (2603:1096:101:2d7::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.19; Tue, 30 Jun
+ 2026 09:47:37 +0000
+Received: from SEYPR04MB7287.apcprd04.prod.outlook.com
+ ([fe80::2f58:a52d:8e7b:65d0]) by SEYPR04MB7287.apcprd04.prod.outlook.com
+ ([fe80::2f58:a52d:8e7b:65d0%5]) with mapi id 15.21.0159.018; Tue, 30 Jun 2026
+ 09:47:37 +0000
+From: "Omkar Ganesh <contractor>"
+	<Omkar.Ganesh@contractor.tatacommunications.com>
+To: Transport Help Dighi <transporthelp.dighi@tatacommunications.com>,
+	Transport Executives <transport.executives@tatacommunications.com>, Rahul
+ Gaikwad <Rahul.Gaikwad3@contractor.tatacommunications.com>, "Arvind Shelar
+ <contractor>" <Arvind.Shelar@contractor.tatacommunications.com>, Prakash Pol1
+	<prakash.pol1@tatacommunications.com>, "Omkar Ganesh <contractor>"
+	<Omkar.Ganesh@contractor.tatacommunications.com>, "ganeshomkar905@gmail.com"
+	<ganeshomkar905@gmail.com>, Sandeep Mane
+	<sandeep.mane@contractor.tatacommunications.com>
+Subject: NDC CLEARANCE  Transport  Deactivate.
+Thread-Topic: NDC CLEARANCE  Transport  Deactivate.
+Thread-Index: AQHdCHNLTcH5iNiPrUuHtb5xUloINg==
+Date: Tue, 30 Jun 2026 09:47:37 +0000
+Message-ID:
+ <SEYPR04MB7287726CA5095312506572CBC5F72@SEYPR04MB7287.apcprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-Mentions: Omkar.Ganesh@contractor.tatacommunications.com
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+ MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_Enabled=True;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_SiteId=20210462-2c5e-4ec8-b3e2-0be950f292ca;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_SetDate=2026-06-30T09:47:36.931Z;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_Name=General;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_ContentBits=1;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_Method=Privileged;
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none
+ header.from=contractor.tatacommunications.com;
+x-ms-traffictypediagnostic:
+	SEYPR04MB7287:EE_|SEYPR04MB9020:EE_|SG2PEPF000B66CC:EE_|OSQPR04MB8859:EE_
+X-MS-Office365-Filtering-Correlation-Id: e181268f-c3c1-4254-e6b4-08ded68ca22f
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted:
+ BCL:0;ARA:13230040|23010399003|376014|3143699003|3123699003|366016|1800799024|8096899003|38070700021|6133799003|56012099006|18002099003;
+X-Microsoft-Antispam-Message-Info-Original:
+ btk/jeQH7l6fu+JPQLkqsqAKoO6+SAGD/a6yC2Ln/fI8fiEOwxhZYWsiWhO/ehweV7jDFqcIhjNYX4KvnX+My9oNi+ClQ7J59BaCpg2irnYR/WmJFxscJkOIq2V7O2Qypkhp+UeDrFXZMqg8h27a4QWg8NYumj03F66sHec1d2xSTygt18hB4DBM/NovjgXBi2fZTieN2X+RH3mYG1Cxn12kGFOItYuXIxlMRJcTg3xrCY/aE+0aibYTBVRoF5OgBqWKoPCewcUorKyWutaw/xmQ0jGJW1kAVHmCLvpRAPmmDcMGsEMSqSoSnzKLmZtZsITu3bG5LC6O7RNYMrcDUSnTm77sDAThh2obtY/RdWeaqKLWXsVdMfoPA8mx8gfQE+xCEOLQvdT0iNMcPf5D/ZK9is/R1FrS0T0BiShc7NLrNWP1vmqTKm0CUgmKr94tgUJsdX6gFXfgI19yXhXdQyoHb/qNHcGVmmtnk/rP1qGVV5gobNnuwrTO55iEEbTgJ9fC2nKU8a8Hrfh8V7t66dWmxPY/QfOlf6kKnVePK1cIT4R+Po/CU+A1CKsmw4QMaA8vD+g0Dm5Obfn83IucSXqukCpDvzjihI7B+d3evBIjZEIaNouDCGPsZ32ENrvI8swSWOES13xqkArN4qkutM3YcD/M0wic2L7mawuimQyOOSp/vLGX93VSWmQXC4uRXGLvJtF1qMIBQWlrbE4O1ukqq618NG6L8cJbePCygCagXZu2mQfgEGPmI4LffY6OOr82XTH//Shoe0aq4gagBw==
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEYPR04MB7287.apcprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(376014)(3143699003)(3123699003)(366016)(1800799024)(8096899003)(38070700021)(6133799003)(56012099006)(18002099003);DIR:OUT;SFP:1101;
+Content-Type: multipart/alternative;
+	boundary="_000_SEYPR04MB7287726CA5095312506572CBC5F72SEYPR04MB7287apcp_"
+MIME-Version: 1.0
+X-Exchange-RoutingPolicyChecked:
+ YSVfnXp/0jGEndPi8r/V95MQxUIV8zFlGc7yvLwWdAED2KSoAJLIR07gTq4l1cLIQlLAzCVVM5+3LwoWAsXUyZ/2MrDv4PSNVtO+6ZFeGmcgv2+0n8G/k6IzMG8nOgcKUp8kxZXFrWXfnptEOdNynzmrxMpZT/2mCwAOrfGWFk2joeCInbsButzTKeZ+xP3ccO+xtg/2LYpm7y+K3kxQILYTe2zZMG2kVDzqGktAgkhGqZ7Bk9om8uaTGn0JpPw260nhZMHDSnG9fuSaig4hQQODwFZ09+22wTzQLEdiZ8vkUqY4HRm7CkUDC4y9Rxhr5CzvwcfLecQW5/M6JfE12w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEYPR04MB9020
+Original-Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none
+ header.from=contractor.tatacommunications.com;
+X-SHN-DLP-SCAN: success
+Return-Path: Omkar.Ganesh@contractor.tatacommunications.com
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ SG2PEPF000B66CC.apcprd03.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+	463da8dc-6354-49e4-a27e-08ded68c9e53
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|82310400026|36860700016|376014|23010399003|3123699003|3143699003|35042699022|14060799003|1800799024|6133799003|18002099003|8096899003|56012099006;
+X-Microsoft-Antispam-Message-Info:
+	62D1kh2xwWRyLxYE5drnw1hbwItyap2xH7Br0oxC1N6bZkmiby6IeFBGCVvLbqm+pfr3/qJ61Pk31UkXz/MTTwF5WgW5BmDV8ErhGmvh18hm29x7YJBLcpPIrlU2aic1E5W4180K1gSpZ7KeTvnmYWodNfeFDO1kbFMl5Y30QPKhbFvIw2PWZjMlhU7HKdaMKYC+Fe+KQ1V4AtFkVbtbPKZ+7guKsLz+HrDMT4mEPkeT1uvpSht+je+09grTtb5ecejZOAJf+jPMBla/+jDu03djul2++dorbjUoX0Mkap8RJxzIExuZIT4h6oco62e8ywMEIFeOL2uF4rLwNGGbSIUQyMxHSCKFoZypuCphYr+mPUBFtCjzUa4056Q0a/NDGp/0X9IZDiBsibsVd47iyAIWqqh63UDVmIIIILfMozSFysGc9Ix7i9eWdQxN1vFRVOAmmFNNYCF/6+Cd/nrqcQJRERo6J8PR+S1uiuwOAzwMnUrZW0W8gLPailgdUqO1zJyB6UDQyzZqN4r8cTdLKcLAiaR3wvQ2ciSTGpDMiUMvF1pRD/hXd20XbMSmd2cxaFwzSnRkLD5HldXkeeKa/e9edgYeM0GelSfgaHWqOfeWioO+o2qFMc4p8xSSwC01Ea6GwWi6gjLeSqIb5LurnlsKqa7F3jhG7u7cXw15TyeJvPr5gmhGNXyZ4UqT2nIdjf+xomhcNxJSfPAjv3tt+fVgv8oy6tFBcK7qm565Tq8FQT8N7xA3E7IeXbVVtP8h6oFoszXbhjWgB0kn+C747Oj7gwivRPyITa0LYZIcfH0=
+X-Forefront-Antispam-Report:
+	CIP:3.106.94.86;CTRY:AU;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:harakainline2-0b2d913ca08e4ee3d;PTR:send1.mail-inline.syd1-pop.i-shn.net;CAT:NONE;SFS:(13230040)(82310400026)(36860700016)(376014)(23010399003)(3123699003)(3143699003)(35042699022)(14060799003)(1800799024)(6133799003)(18002099003)(8096899003)(56012099006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	lBxl/LsVjj9z01SFr0Aq8Itiw4T8r+Vyb7OfGLAmrKxjyHijBH8iQrGPBymwBc87S/jX6YGentN0bP712KQ6Djav6tZw3XyERf5NrgRiDmKtkC2gWydD0GcT90ENTBImn5q4peSlBBxmjJvFXZWglW7XArdMcuWGjD5F/7z5mSugtqnuj66hi55vUjYMdoWqvKH1JBd1n7HwG3d22wZpyIsV0EF8b5/eeclYTeYeJDBgvkaR36MUDVEnb2wdfRtTLcZfmUp7awqCdEbmJyt0Dyl1miC2tquU1bfvzBpqKVMz5HAbU2AKWl1x0sf2wHkJ91JIsroRAU9LL5KfGbns6E/O7JedyOw040wxct+Xz8lCllKB8n1EHSbz+CgPCE3xmBVDYcPJOU4dmy0/+hAaU0r8JlMNleo1rmMn5lnm58zsQiKfN3ZdyamoJZ7Nbb+c
+X-OriginatorOrg: contractor.tatacommunications.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jun 2026 09:47:43.5214
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: e181268f-c3c1-4254-e6b4-08ded68ca22f
+X-MS-Exchange-CrossTenant-Id: 20210462-2c5e-4ec8-b3e2-0be950f292ca
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=20210462-2c5e-4ec8-b3e2-0be950f292ca;Ip=[3.106.94.86];Helo=[harakainline2-0b2d913ca08e4ee3d]
+X-MS-Exchange-CrossTenant-AuthSource:
+	SG2PEPF000B66CC.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSQPR04MB8859
+
+--_000_SEYPR04MB7287726CA5095312506572CBC5F72SEYPR04MB7287apcp_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Hello Team,
+
+I hope you are doing well.
+I would like to inform you that today, 30 June 2026, is my last working day=
+. I request you to kindly deactivate my transport facility with immediate e=
+ffect.
+PFB credentials details.
+ User ID -  T04737
+Mail ID - @Omkar Ganesh <contractor><mailto:Omkar.Ganesh@contractor.tatacom=
+munications.com>
+Contact no : 9850392802
+
+--_000_SEYPR04MB7287726CA5095312506572CBC5F72SEYPR04MB7287apcp_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div class=3D"elementToProof" style=3D"direction: ltr; font-family: Aptos, =
+Aptos_MSFontService, -apple-system, Roboto, Arial, Helvetica, sans-serif; f=
+ont-size: 12pt; color: rgb(33, 33, 33);">
+Hello Team,</div>
+<div class=3D"elementToProof" style=3D"direction: ltr; font-family: Aptos, =
+Aptos_MSFontService, -apple-system, Roboto, Arial, Helvetica, sans-serif; f=
+ont-size: 12pt; color: rgb(33, 33, 33);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"direction: ltr; font-family: Aptos, =
+Aptos_MSFontService, -apple-system, Roboto, Arial, Helvetica, sans-serif; f=
+ont-size: 12pt; color: rgb(33, 33, 33);">
+I hope you are doing well.</div>
+<div class=3D"elementToProof" style=3D"margin-top: 1em; margin-bottom: 1em;=
+ font-family: Aptos, Aptos_MSFontService, -apple-system, Roboto, Arial, Hel=
+vetica, sans-serif; font-size: 12pt; color: rgb(33, 33, 33);">
+I would like to inform you that today, <b>30 June 2026</b>, is my last work=
+ing day. I request you to kindly deactivate my transport facility with imme=
+diate effect.</div>
+<div class=3D"elementToProof" style=3D"margin-top: 1em; margin-bottom: 1em;=
+ margin-left: 0px; font-family: Aptos, Aptos_MSFontService, -apple-system, =
+Roboto, Arial, Helvetica, sans-serif; font-size: 12pt; color: rgb(33, 33, 3=
+3);">
+PFB credentials details.</div>
+<div class=3D"elementToProof" style=3D"direction: ltr; font-family: Aptos, =
+Aptos_MSFontService, -apple-system, Roboto, Arial, Helvetica, sans-serif; f=
+ont-size: 12pt; color: rgb(33, 33, 33);">
+&nbsp;User ID -&nbsp; T04737</div>
+<div class=3D"elementToProof" style=3D"direction: ltr; font-family: Aptos, =
+Aptos_MSFontService, -apple-system, Roboto, Arial, Helvetica, sans-serif; f=
+ont-size: 12pt; color: rgb(33, 33, 33);">
+Mail ID - <a href=3D"mailto:Omkar.Ganesh@contractor.tatacommunications.com"=
+ id=3D"OWAAM890738" class=3D"tWKOu mention ms-bgc-nlr ms-fcl-b">
+@Omkar Ganesh &lt;contractor&gt;</a></div>
+<div class=3D"elementToProof" style=3D"direction: ltr; font-family: Aptos, =
+Aptos_MSFontService, -apple-system, Roboto, Arial, Helvetica, sans-serif; f=
+ont-size: 12pt; color: rgb(33, 33, 33);">
+Contact no : 9850392802</div>
+</body>
+</html>
+
+--_000_SEYPR04MB7287726CA5095312506572CBC5F72SEYPR04MB7287apcp_--

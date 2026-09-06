@@ -1,0 +1,982 @@
+Delivered-To: ganeshomkar905@gmail.com
+Received: by 2002:a05:7010:5b28:b0:533:7ff7:5a35 with SMTP id br40csp729541mdb;
+        Tue, 30 Jun 2026 03:08:26 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AHgh+RophIe45HP0XNFbQg4TNVIguDdMvnBGupDztViI8N2tXkyVUVMDNdb59aaWRdc8Ann73TMTVTv11akE2bmgiQ==@gmail.com
+X-Received: by 2002:a05:6a00:2c85:b0:847:7ece:3426 with SMTP id d2e1a72fcca58-8479f298f8emr2348743b3a.58.1782814106619;
+        Tue, 30 Jun 2026 03:08:26 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1782814106; cv=pass;
+        d=google.com; s=arc-20260327;
+        b=p6kRLiOeZIYIFlBzVFMvYGEOPDZk91JVB8WyJd4+/XQVD8lGezhIUl+z84kMpVNtk6
+         tsl5r8+ZXml9Ls2ogfP6zH4Iq2md5IIZH0a9RyrjnUfUHXCkp0KRBC0K6A3kVblWSBv9
+         QYrMOC+sY/KS6NmOJncBonGMeNzIsgAPM2q6cC66J/lIfUBok3ttD3aqZgWEGk9T4fSI
+         Rsap+0ZjWyLIYBUSFcEplmKHto+nbTTXwsYC9mFH3haNrbdUtkbtxUPF9822yc2KP+SW
+         ZX4cyhrJpug1UdFr+2917AM0NDrHTtQS7LdaSjTvNkgWsVH9My3w8vu/bBp7v41zJIz4
+         /12A==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=original-authentication-results:mime-version
+         :authentication-results-original:msip_labels:content-language
+         :accept-language:message-id:date:thread-index:thread-topic:subject
+         :cc:to:from:dkim-signature:dkim-signature;
+        bh=sUVhxQBckqJOGGb9q+kMiKPdgBdyqOyfdx8YJ2YzEHU=;
+        fh=Tf4nbw2/X0/YsadBod9pf1RxbJfKPPfolK336ynL8Ng=;
+        b=kFMBM78jZ0d1wajrH+Gg7+OuZR3jmnVGqGDfqCQmhWwCPkJ7jCFkVPoZa4lQuVNT5q
+         BuS7ORY/LvB/sQOo4tpuLXHuNFJQGJI48YMOGThOc13VdHyRNB1EDG42Hfz44q3fPNIg
+         wjPQdu8Mj8dKvF/goJPoinp0olNLnRVY+hwLeaFJS6awmkWOYO0VjmRVbwXh9W7WBvLX
+         YbxJUS8UPDyP1k1ksZtM+kgqwn8IG+UDQ7TDYcM5Lcf6O5oglBJt41cHmh7vC/VplOuJ
+         H2sREydr+b0wRXER8PJu/yK1POEYeXZpk+ixxWs3oUS6enlt9xp0pVrHMSkMjkiSmExr
+         4xIA==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@contractor.tatacommunications.com header.s=selector1 header.b="Vt/eaZVh";
+       dkim=pass header.i=@contractor.tatacommunications.com header.s=selector1 header.b="Vt/eaZVh";
+       arc=pass (i=2 spf=pass spfdomain=contractor.tatacommunications.com dkim=pass dkdomain=contractor.tatacommunications.com dmarc=pass fromdomain=contractor.tatacommunications.com);
+       spf=pass (google.com: domain of yogesh.sarode@contractor.tatacommunications.com designates 2a01:111:f403:c405::7 as permitted sender) smtp.mailfrom=Yogesh.Sarode@contractor.tatacommunications.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=contractor.tatacommunications.com
+Return-Path: <Yogesh.Sarode@contractor.tatacommunications.com>
+Received: from TYDPR03CU002.outbound.protection.outlook.com (mail-japaneastazlp170130007.outbound.protection.outlook.com. [2a01:111:f403:c405::7])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-847a07ec0f5si4078727b3a.265.2026.06.30.03.08.26
+        for <ganeshomkar905@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 30 Jun 2026 03:08:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of yogesh.sarode@contractor.tatacommunications.com designates 2a01:111:f403:c405::7 as permitted sender) client-ip=2a01:111:f403:c405::7;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@contractor.tatacommunications.com header.s=selector1 header.b="Vt/eaZVh";
+       dkim=pass header.i=@contractor.tatacommunications.com header.s=selector1 header.b="Vt/eaZVh";
+       arc=pass (i=2 spf=pass spfdomain=contractor.tatacommunications.com dkim=pass dkdomain=contractor.tatacommunications.com dmarc=pass fromdomain=contractor.tatacommunications.com);
+       spf=pass (google.com: domain of yogesh.sarode@contractor.tatacommunications.com designates 2a01:111:f403:c405::7 as permitted sender) smtp.mailfrom=Yogesh.Sarode@contractor.tatacommunications.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=contractor.tatacommunications.com
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=dGTdp1Nac98vJEFZz2tWKAI83wbvdfHfHWkNEiwcV9I4BF7hNVuGBU2/4XYF3vIEKLdSiILg6rAN6NhET606TiE5IkfK1p6itbdpbS8lisyi9EuZehYx/fPAVRNYgYfiSdoCSmSg4yz4UZ82w0prRVjHsO6A8w7rkvqj3llBwVxoOo+2fsS7wsoEzEXzzWtpRBbUGOOJl+fY7QubGtYsQLKfhQ/XFavpRkWfjgLKJ17jAcduT+52iiQx0wT+OasvEGr1xsKrRYgdR7BpdbWDk+21zLsM3rV+eo63ofRX/3catVbKANrtQO1cGWdB2egP6wH9okxqxqa2+q5BeZp/zQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=sUVhxQBckqJOGGb9q+kMiKPdgBdyqOyfdx8YJ2YzEHU=;
+ b=uNKivySCagElNDSXp/VNAlad1s/3QwnMObf/VKac9h0rJ6ug5s167Xt/ckmv9aMuikBRGuqGaocDJAyxr1SR0p2cVYAKBbAfifZHiP5nBYdhtV1x8sNau8KXxHJCtGjLwBwVPUW/Pn5o5b9DHLY2NFVH3LfJtfVZaMBR7pIMtP5ZWmNCdacid7IgidirWjSlCYPQ8+oMHEika+FxvDKR69rzQBN/5PbbPPR4YjSYjhMdoJwn8HxrjHj/99vsf48RJRISXz3bf3I1h+ALoznNvTMjNb+0uXioZRrdj20lTwOP93QhWFZZouAuqjQP0wqyodpQ80ibrTxdHR1svg+/TQ==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 3.104.39.150) smtp.rcpttodomain=gmail.com
+ smtp.mailfrom=contractor.tatacommunications.com; dmarc=pass (p=reject
+ sp=reject pct=100) action=none header.from=contractor.tatacommunications.com;
+ dkim=pass (signature was verified)
+ header.d=contractor.tatacommunications.com; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=contractor.tatacommunications.com]
+ dkim=[1,1,header.d=contractor.tatacommunications.com]
+ dmarc=[1,1,header.from=contractor.tatacommunications.com])
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=contractor.tatacommunications.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sUVhxQBckqJOGGb9q+kMiKPdgBdyqOyfdx8YJ2YzEHU=;
+ b=Vt/eaZVhofdMOecYDNIorygWwvl6HAqu7Y+MGYh+pi6LMFNE7rXOjSu7dCciWxwtqDIXQKczkMzow/ZIPIssPxSrLnGgMgHy/qQbajt012BWKHl1Qm7xcN0S4mxVsJKd/FnFSS36x8FEON/csEg+CYapb6iGigxdl0QqJPr+yFYM36SvsajnsAbtNLzn1Upb1SPOjQXr73gBmL6ILWLFknGF7DRwkDtAREainQXMYSwE1MsbMGD+SqfHshlWpNA9OAH2e/M9jLxPbkf7HQLEhZwLFSdULHN+hvQWMGf8aatJisoerOxiBCPIjKLnIzvl2eJuaQeq8nC/6qQMbjv/AQ==
+Received: from TY4PR01CA0112.jpnprd01.prod.outlook.com (2603:1096:405:378::14)
+ by SEYPR04MB5761.apcprd04.prod.outlook.com (2603:1096:101:88::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.19; Tue, 30 Jun
+ 2026 10:08:22 +0000
+Received: from TY2PEPF0000AB86.apcprd03.prod.outlook.com
+ (2603:1096:405:378:cafe::11) by TY4PR01CA0112.outlook.office365.com
+ (2603:1096:405:378::14) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.181.8 via Frontend Transport; Tue, 30
+ Jun 2026 10:08:22 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 3.104.39.150)
+ smtp.mailfrom=contractor.tatacommunications.com; dkim=pass (signature was
+ verified) header.d=contractor.tatacommunications.com;dmarc=pass action=none
+ header.from=contractor.tatacommunications.com;
+Received-SPF: Pass (protection.outlook.com: domain of
+ contractor.tatacommunications.com designates 3.104.39.150 as permitted
+ sender) receiver=protection.outlook.com; client-ip=3.104.39.150;
+ helo=harakainline2-0d0b736d717d6e448; pr=C
+Received: from harakainline2-0d0b736d717d6e448 (3.104.39.150) by
+ TY2PEPF0000AB86.mail.protection.outlook.com (10.167.253.10) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.181.6 via Frontend Transport; Tue, 30 Jun 2026 10:08:21 +0000
+Received: from OS8PR02CU002.outbound.protection.outlook.com (mail-japanwestazon11012050.outbound.protection.outlook.com [40.107.75.50])
+	by harakainline2-0d0b736d717d6e448 (Haraka/2.8.24) with ESMTPS id 0329FAD8-FAD0-4C03-A644-5C0FEEA57216.1
+	envelope-from <Yogesh.Sarode@contractor.tatacommunications.com>
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 verify=FAIL);
+	Tue, 30 Jun 2026 10:08:18 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=gxnFdi2YH1ZLRYNZ5/Y+L3sE0wv9LRhBdM9zth96gSrUAYd5Nl7RzrRXjZ2Iv+OCJmDkTwtJqeH59Ik3BDun1vSMALAySTJnFPBmWdPYsZwjHpwMMaj2aF0A/AmmA5uVTdSpkQGadl+GM60Y1eslEEcW1C3wg12ZuUcgldfuinuPXkVTL2flJp8BRky1101FNxQeqIqPezzHzzyxJqNoEHGZbNX3gk/w+b03X7JrX87N3SWwG58bf+TA8LseWsxiywEGRAVRPdz42S+lDk3/1fBPVp162/DKK6bUnzx63xObxBl84TxtNGOq21wOhsI7/VFOAkCuUnXbfUUdOQTbUw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=sUVhxQBckqJOGGb9q+kMiKPdgBdyqOyfdx8YJ2YzEHU=;
+ b=TWqQk5o0CYW5GWSi6D3HYhwUo5C5iVGKnTcpEm7XZ8H7VXq3uJar3uZHOKvlN60ZhRkZEFDPqyN0KsxV+Ls205+2upYG2iw7iK2YBaJFJjKhguexk7SvJtzdvYlh+qRvuPOp+P9tz7o+2+IopxHtaE5PtlJNzzkhHpzzrX+jRDHxI1AthwRe7JPrtVYPqZRd6ubjy8q9oU2NwzyGAueZDKsouNRx0aWkV7XIpbWP182CfwxrzoZbMeah3BiDWDNBiCQ+qhqQ+lybuhT91PX8JGLlU+JtNOeW81D1Z7IrDu6JSBCILFuxudFROSQUy3tQPwh47jonE8GcfXQP9e3nNg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=contractor.tatacommunications.com; dmarc=pass action=none
+ header.from=contractor.tatacommunications.com; dkim=pass
+ header.d=contractor.tatacommunications.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=contractor.tatacommunications.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sUVhxQBckqJOGGb9q+kMiKPdgBdyqOyfdx8YJ2YzEHU=;
+ b=Vt/eaZVhofdMOecYDNIorygWwvl6HAqu7Y+MGYh+pi6LMFNE7rXOjSu7dCciWxwtqDIXQKczkMzow/ZIPIssPxSrLnGgMgHy/qQbajt012BWKHl1Qm7xcN0S4mxVsJKd/FnFSS36x8FEON/csEg+CYapb6iGigxdl0QqJPr+yFYM36SvsajnsAbtNLzn1Upb1SPOjQXr73gBmL6ILWLFknGF7DRwkDtAREainQXMYSwE1MsbMGD+SqfHshlWpNA9OAH2e/M9jLxPbkf7HQLEhZwLFSdULHN+hvQWMGf8aatJisoerOxiBCPIjKLnIzvl2eJuaQeq8nC/6qQMbjv/AQ==
+Received: from TYZPR04MB4272.apcprd04.prod.outlook.com (2603:1096:400:7::7) by
+ TYZPR04MB6596.apcprd04.prod.outlook.com (2603:1096:400:28d::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.19; Tue, 30 Jun
+ 2026 10:08:14 +0000
+Received: from TYZPR04MB4272.apcprd04.prod.outlook.com
+ ([fe80::c447:4c28:830d:fd6f]) by TYZPR04MB4272.apcprd04.prod.outlook.com
+ ([fe80::c447:4c28:830d:fd6f%5]) with mapi id 15.21.0159.018; Tue, 30 Jun 2026
+ 10:08:14 +0000
+From: "Yogesh Sarode <contractor>"
+	<Yogesh.Sarode@contractor.tatacommunications.com>
+To: "SHAILESH AROSKAR <contractor>"
+	<shailesh.aroskar@contractor.tatacommunications.com>, "HARIENDRA KAMBLE
+ <contractor>" <hariendra.kamble1@contractor.tatacommunications.com>, ITAM
+ SUPPORT TEAM <itamsupport.team@tatacommunications.com>, Off boarding India
+	<OffboardingIndia@tatacommunications.com>, "IT Technical Assistance Center
+ (eTAC)." <eTAC@tatacommunications.com>
+CC: "GANESH JOSHI <contractor>"
+	<ganesh.v.joshi@contractor.tatacommunications.com>, DSS_Pune
+	<dss_pune@tatacommunications.onmicrosoft.com>, "ganeshomkar905@gmail.com"
+	<ganeshomkar905@gmail.com>, Sandeep Mane
+	<sandeep.mane@contractor.tatacommunications.com>
+Subject: Laptop Surrender By Omkar Ganesh
+Thread-Topic: Laptop Surrender By Omkar Ganesh
+Thread-Index: AQHdCHbB1fw5A62Mw0uUc3+5QklPkQ==
+Date: Tue, 30 Jun 2026 10:08:14 +0000
+Message-ID:
+ <TYZPR04MB4272EB4C1467E099FC52345CA8F72@TYZPR04MB4272.apcprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+ MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_Enabled=True;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_SiteId=20210462-2c5e-4ec8-b3e2-0be950f292ca;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_SetDate=2026-06-30T10:08:14.104Z;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_Name=General;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_ContentBits=1;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_Method=Privileged;
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none
+ header.from=contractor.tatacommunications.com;
+x-ms-traffictypediagnostic:
+	TYZPR04MB4272:EE_|TYZPR04MB6596:EE_|TY2PEPF0000AB86:EE_|SEYPR04MB5761:EE_
+X-MS-Office365-Filtering-Correlation-Id: 2ba39cbd-5695-48f2-1f82-08ded68f844e
+x-ld-processed: 20210462-2c5e-4ec8-b3e2-0be950f292ca,ExtAddr,ExtFwd
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted:
+ BCL:0;ARA:13230040|366016|23010399003|1800799024|376014|3123699003|3143699003|38070700021|18002099003|8096899003|56012099006;
+X-Microsoft-Antispam-Message-Info-Original:
+ QD+1umnV5XR6eOUeByTpkNIgT9IFbTeExdUzl9J3BzLQvf9/uTRSTut1DZkI4gaL1Ao/cUD+9nqBoxu9v6LtxuzkuNIOiy6m5skxzsXnprFJnEB1UTvhFW05PpvB/99liEeowi1elTxpU5V16FuXF7gC1hhkn6JcI3Z537UAsf4PIZoN+VKXhTBs4fcDutJtYNCXIVXNnxfZciqnMPDv+b+r5tnczPBxfdJ4Q/ybPI8M5adTPiVGNOUSCKR9SfKKqoG55EJ5YYgihuMhjZBlKxlaE26MQkkO9r6FkcOaGOSJodzYfHpPensB7ND9TyZtPUJ0UE13yVrfDgRjYw154gYumiJyZYwKv3++i0A0XTLkEm0DgevAPWLK9ivbDniufPkrYYITguhHh3p69qiW09XXO+XSx6VV/6w+00G1kUaYc8kf0z8EjScN6ztvbHDZkmPQNs2FiNedP6skBF2LT7sVbuFqmI1T86Bw96Y25mfbYIGfmzqm2SkRzQyQtoi3eFAKe1EJgsn4Vpk4V4J/eXUyxB4L7EkGqOpVcLi92bYFH9OnsYW8NPUsrvMpQ7Kz+R7oXBNlLi9b8eJEzWK4INEjdD+dBSwfTG2r2rUhHeE9NC5JdwfvTeWPkISLRSU+0rgzjgWFZ8kUyxlS0GwTX9JlUgBdRyKhXmYMeYGXrWZmUMxt56kSCsCZ7S7w06/MVRbpxl8xyjjx2IcXqZ6DHqxxL88AWFPP5TYk8GCaqSqUZVMaVdRDdY53fh5FRDFjRn5NbjR+gQxTF9kR41MDGQ==
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYZPR04MB4272.apcprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(23010399003)(1800799024)(376014)(3123699003)(3143699003)(38070700021)(18002099003)(8096899003)(56012099006);DIR:OUT;SFP:1101;
+Content-Type: multipart/alternative;
+	boundary="_000_TYZPR04MB4272EB4C1467E099FC52345CA8F72TYZPR04MB4272apcp_"
+MIME-Version: 1.0
+X-Exchange-RoutingPolicyChecked:
+ tHHf/ATIHUqScLmtBlPoiMWxePX6QvLJsThvp560oDzfvKh+OLs9PnT2G3+08qC8JMQPoIPlaXOXIYulyoHVCaoiIwfpsrJzl6+e3nzlpqybnUil8og+cJANkV5tb+cbynXf/EO1fpPeHgytzc8Whx1EFsiEEyMpIVv5AeJHts3I6uyk5xrBTbFMBIRCVN1ySMvEaXl92i6wSvi0gIhyQ0CTEg30udmz7DXhBL9x/+nwEL/OichPKYwVt+lN4JT7kKjKa0JrH+3oBxffzC3RcXFKA5INsas8+njE8IhbpBhUyDZvNj46PA1SkcNTqyJnp1km740soKwSVXg/Kfqgug==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYZPR04MB6596
+Original-Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none
+ header.from=contractor.tatacommunications.com;
+X-SHN-DLP-SCAN: success
+Return-Path: Yogesh.Sarode@contractor.tatacommunications.com
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ TY2PEPF0000AB86.apcprd03.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+	3fc6ff87-8cd7-40e7-5b1a-08ded68f7fcb
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|1800799024|82310400026|36860700016|376014|3123699003|3143699003|23010399003|14060799003|35042699022|18002099003|56012099006|8096899003;
+X-Microsoft-Antispam-Message-Info:
+	U+wLfeW9kxYQ2N2/vjyEeiuM3ES4XqpA9nhZvXWGgluCYNTRXIystqC0f6/BNyAJKGPJMUiXGDKU7Cf/YvnRFfe6x+e04tY+1NeazOs7zjdARYaUd+QNL3/kxw9OE/yKaVQgfw/8aws044yD6jr3K+/1FNpeOHWvLGIAfxxWjJKv66ABESQT8OcvDlHXFMRovdhTMNARlRqSeRxYtCBkH3wtybglSHozq6GnLpF1g2UAPqsOwvNmaqys3VOmlLMJyYYjeuSU3BD4M6TKcvMV9Xxg759QLfBOv3VNfaXwNKNL6pk+qCBJRngGt2flBJTJGewlV44jv6dhcJ8XBVjo1pWpZ6SNCawl2iJ4upGdEv8b50tKSCWTK5vFYWzdQgiAybspxPeu3uXjMalmMgNDv+Pm7jRSW7pjiIiIWPy6EPh3M4YPv7khYQsBcSY6vRWVoglIe9vYWPlEI9mojQ8j1r6gj0LEafiywrxNtnvkYeFh+M+aR0gBDjWZulPqIM+un56/4FCarGZj3pkBeEEvBFh0PUZ8jS6Owtqzi3crLqtct249LB4iyV5PNJebpmqJsOGYXnGq8yIucyvAJz4xgDrG7Y/4cITRDbdmiHaju0P6VaRXl4f4FcOBA7Z+FovfW/YHD1yHmERgSRFVediA/RFr5Z7LuQBzgVXhur8V73JmyC+b7MHzr4WYm+WzIa+Vx5KB2MciXmriAlZzTb0pY9XDriinQJQxA0Ur7ZPzVOXqMFw0CsdmXB2He6B52W4fiC2MJhRFudAX3cp8KiDPyw==
+X-Forefront-Antispam-Report:
+	CIP:3.104.39.150;CTRY:AU;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:harakainline2-0d0b736d717d6e448;PTR:send2.mail-inline.syd1-pop.i-shn.net;CAT:NONE;SFS:(13230040)(1800799024)(82310400026)(36860700016)(376014)(3123699003)(3143699003)(23010399003)(14060799003)(35042699022)(18002099003)(56012099006)(8096899003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	9vDwdSW59/ryQ6iTj+x45BSQQX4hvnZ/0yRk41hT5nY2H1ZfUIeqaE+fYfQdm2h0Cye7hNDY0A2RJNO5mtYUH2E2voXYE1DkkXRtjw1IbBs1YmxJNQLLQffWH/vaUTYdXhVtbqSa6xVo+rW6EM4O/+xWUvHO21D2VorrZYeZpl6SzaegXGCVPBTbm+MJoOigosk+8wEapIzStUoke8tyHbY8guGpx77VXYOCbBE+p+V3jDPxIKDHspYhmunyIaF2ClNZjSrscRPUsdl46Sye7nK2F4vGv659QwN79NZ8S+KFXFWPcl8x2hAoWXqbIkq7yzf6mF5TrRDCv+ZT29htOD7ntHmaoWTMZNhmbU4We5kThdDdtsc5vgb2Ai/RiN9Jx1AWkCpsdqguLceZtu3IrbI8J61tBhGCw7/PA4fHzxUsdak/nK6Mo42e3trMJ73x
+X-OriginatorOrg: contractor.tatacommunications.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jun 2026 10:08:21.7296
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2ba39cbd-5695-48f2-1f82-08ded68f844e
+X-MS-Exchange-CrossTenant-Id: 20210462-2c5e-4ec8-b3e2-0be950f292ca
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=20210462-2c5e-4ec8-b3e2-0be950f292ca;Ip=[3.104.39.150];Helo=[harakainline2-0d0b736d717d6e448]
+X-MS-Exchange-CrossTenant-AuthSource:
+	TY2PEPF0000AB86.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEYPR04MB5761
+
+--_000_TYZPR04MB4272EB4C1467E099FC52345CA8F72TYZPR04MB4272apcp_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Dear ITAM Team,
+
+
+Below mentioned Laptop has been Surrender by Employee Please updated in you=
+r record.
+
+
+Please provide NDC.
+
+
+Laptop Handover to IND_PUNE_DIGHI_CORAL_STORE
+
+
+Laptop mark as - In storage
+
+
+Dear Etac Team,
+
+
+Please open the new request for both SCTASK and assign it to me and IT asse=
+t team.
+
+
+Service Now Ticket Creation:
+
+Ticket Type
+
+Service request
+
+Category/Item
+
+Laptop Surrender By Omkar Ganesh
+
+  *
+
+  *
+
+Caller email ID
+
+Omkar.Ganesh@contractor.tatacommunications.com
+
+hort Description
+
+Laptop Surrender
+
+Description
+
+Laptop Surrender
+
+Hostname
+
+TCL5D58BK3
+
+Assignee Group
+
+TCL DSS PUNE ASSET
+
+
+SDP Ticket No
+
+Username
+
+Omkar Ganesh
+
+Employee ID
+
+97201
+
+Department
+
+NA
+
+Make and Model
+
+Dell Latitude 5420
+
+Serial Number
+
+5D58BK3
+
+SAP NO.
+
+TCL5D58BK3
+
+Adapter
+
+YES
+
+Laptop Bag
+
+YES
+
+Wired Mouse
+
+YES
+
+Headphone
+
+NA
+
+Removed Admin Rights
+
+NA
+
+Licensed Software Removed
+
+No Software Available
+
+Licensed Software Removed
+
+No Software Available
+
+Licensed Software Removed
+
+No Software Available
+
+Licensed Software Removed
+
+No Software Available
+
+Data Backup.
+
+Not Required
+
+Removed from AD
+
+Yes
+
+
+
+Thanks, and Regards
+
+Yogesh Sarode
+
+Information Technology
+
+Tata Communications Ltd.
+
+Dighi Pune -411015 India.
+
+--_000_TYZPR04MB4272EB4C1467E099FC52345CA8F72TYZPR04MB4272apcp_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Dear ITAM&nbsp;Team,</span></p>
+<div id=3D"x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_Signature" style=
+=3D"background-color: rgb(255, 255, 255); margin: 0px;">
+<div id=3D"x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_Signature"=
+ style=3D"margin: 0px;">
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"color: rgb(36, 36, 36);"><br>
+</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Below mentioned Laptop has been
+</span><span style=3D"font-family: Arial, sans-serif; font-size: 11pt; colo=
+r: black; background-color: yellow;">Surrender</span><span style=3D"font-fa=
+mily: Arial, sans-serif; font-size: 11pt; color: black;">&nbsp;by Employee =
+Please updated in your record.</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"color: rgb(36, 36, 36);"><br>
+</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k; background-color: yellow;">Please provide NDC.</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"color: rgb(36, 36, 36);"><br>
+</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Laptop Handover to IND_PUNE_DIGHI_CORAL_STORE</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"color: rgb(36, 36, 36);"><br>
+</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k; background-color: yellow;">Laptop mark as - In storage</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"color: rgb(36, 36, 36);"><br>
+</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Dear&nbsp;Etac&nbsp;Team,</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"color: rgb(36, 36, 36);"><br>
+</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Please open the new
+</span><span style=3D"font-family: Arial, sans-serif; font-size: 11pt; colo=
+r: black; background-color: yellow;">request for both SCTASK</span><span st=
+yle=3D"font-family: Arial, sans-serif; font-size: 11pt; color: black;">&nbs=
+p;and assign it to me and IT asset&nbsp;team.</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"font-family: FluentSystemIcons; font-size: 20px; color: curr=
+entcolor; background-color: rgb(66, 66, 66); line-height: 1em;"><br>
+</span></p>
+<table id=3D"x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_table_0" cellspa=
+cing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"text-align: left; text-i=
+ndent: 0px; width: 519.4px; box-sizing: border-box; border-collapse: collap=
+se; border-spacing: 0px;">
+<tbody>
+<tr>
+<td colspan=3D"2" style=3D"text-align: left; text-indent: 0px; border-width=
+: 1pt; border-style: solid; border-color: black; padding: 0.75pt; width: 51=
+8.062px; height: 15pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;"><b>Service Now&nbsp;Ticket&nbsp;Creation:</b></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1pt; border-=
+style: none solid solid; border-color: black; padding: 0.75pt; width: 131.5=
+94px; height: 11.25pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Ticket&nbsp;Type</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1pt solid bl=
+ack; border-bottom: 1pt solid black; padding: 0.75pt; width: 386.469px; hei=
+ght: 11.25pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;"><b>Service request</b></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1pt; border-=
+style: none solid solid; border-color: black; padding: 0.75pt; width: 131.5=
+94px; height: 11.25pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;"><b>Category/Item</b></span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1pt solid bl=
+ack; border-bottom: 1pt solid black; padding: 0.75pt; width: 386.469px; hei=
+ght: 11.25pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; line=
+-height: 32px; white-space: nowrap; margin: 0px; font-family: Aptos, sans-s=
+erif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Laptop Surrender By Omkar Ganesh</span></p>
+<div class=3D"skipProofing" style=3D"margin: 0px; min-width: 90px;">
+<ul data-tid=3D"chat-topic-menu" style=3D"text-align: left; margin: 0px; pa=
+dding-right: 2px; padding-left: 0.3rem; list-style-type: none;">
+<li style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: black;=
+ display: flex; text-indent: 0px; margin: 0px; list-style-type: none;">
+<div id=3D"x_x_x_x_chat-topic-person-8:orgid:3a0304a7-c38e-4264-9115-6a1c16=
+15fdb3" class=3D"skipProofing" role=3D"presentation" style=3D"margin: 0px; =
+display: inline-block;">
+</div>
+</li></ul>
+</div>
+<div class=3D"skipProofing" style=3D"margin: 0px; min-width: 90px;">
+<ul data-tid=3D"chat-topic-menu" style=3D"text-align: left; margin: 0px; pa=
+dding-right: 2px; padding-left: 0.3rem; list-style-type: none;">
+<li style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: black;=
+ display: flex; text-indent: 0px; margin: 0px; list-style-type: none;">
+<div id=3D"x_x_x_x_chat-topic-person-8:orgid:3a0304a7-c38e-4264-9115-6a1c16=
+15fdb3" class=3D"skipProofing" role=3D"presentation" style=3D"margin: 0px; =
+display: inline-block;">
+</div>
+</li></ul>
+</div>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1pt; border-=
+style: none solid solid; border-color: black; padding: 0.75pt; width: 131.5=
+94px; height: 11.25pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;"><b>Caller email ID</b></span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1pt solid bl=
+ack; border-bottom: 1pt solid black; padding: 0.75pt; width: 386.469px; hei=
+ght: 11.25pt; box-sizing: border-box;">
+<div class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; ma=
+rgin: 0px; font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Cal=
+ibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+Omkar.Ganesh@contractor.tatacommunications.com</div>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1pt; border-=
+style: none solid solid; border-color: black; padding: 0.75pt; width: 131.5=
+94px; height: 11.25pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">hort Description</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1pt solid bl=
+ack; border-bottom: 1pt solid black; padding: 0.75pt; width: 386.469px; hei=
+ght: 11.25pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Laptop Surrender</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1pt; border-=
+style: none solid solid; border-color: black; padding: 0.75pt; width: 131.5=
+94px; height: 11.25pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Description</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1pt solid bl=
+ack; border-bottom: 1pt solid black; padding: 0.75pt; width: 386.469px; hei=
+ght: 11.25pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Laptop Surrender</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1pt; border-=
+style: none solid solid; border-color: black; padding: 0.75pt; width: 131.5=
+94px; height: 11.25pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Hostname</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1pt solid bl=
+ack; border-bottom: 1pt solid black; padding: 0.75pt; width: 386.469px; hei=
+ght: 11.25pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in-top: 0px; margin-bottom: 0px;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">TCL5D58BK3</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1pt; border-=
+style: none solid solid; border-color: black; padding: 0.75pt; width: 131.5=
+94px; height: 16.5pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Assignee Group</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1pt solid bl=
+ack; border-bottom: 1pt solid black; padding: 0.75pt; width: 386.469px; hei=
+ght: 16.5pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">TCL DSS PUNE ASSET</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px; font-family: Aptos, sans-serif; font-si=
+ze: 12pt;">
+<span style=3D"font-family: FluentSystemIcons; font-size: 20px; color: curr=
+entcolor; background-color: rgb(66, 66, 66); line-height: 1em;"><br>
+</span></p>
+<table id=3D"x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_=
+x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x=
+_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_=
+x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x=
+_x_x_x_x_x_x_x_x_x_x_table_0" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0" style=3D"text-align: left; text-indent: 0px; background-color: white; w=
+idth: 326.9pt; box-sizing: border-box; border-collapse: collapse; border-sp=
+acing: 0px;">
+<tbody>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: solid; border-color: black; padding-right: 5.4pt; padding-left: 5.=
+4pt; width: 161.7pt; height: 16.5pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">SDP Ticket No</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: solid solid solid none; border-color: black; padding-right: 5.4pt;=
+ padding-left: 5.4pt; width: 163.7pt; height: 16.5pt; box-sizing: border-bo=
+x;">
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 11.15pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Username</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 11.15pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in-top: 0px; margin-bottom: 0px;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Omkar Ganesh</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 6.35pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Employee ID</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 6.35pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;"><b>97201</b></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 11.6pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Department</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 11.6pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">NA</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 16.5pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Make and Model</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 16.5pt; box-sizing: border-box;">
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ma=
+rgin: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Dell Latitude 5420</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 16.5pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Serial Number</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 16.5pt; box-sizing: border-box;">
+<div class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; ma=
+rgin: 0px; font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Cal=
+ibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+5D58BK3</div>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 16.5pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">SAP NO.</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 16.5pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in-top: 0px; margin-bottom: 0px;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">TCL5D58BK3</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 7.4pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Adapter</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 7.4pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">YES</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 13.1pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Laptop Bag</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 13.1pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">YES</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 16.5pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Wired Mouse</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 16.5pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">YES</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 5.2pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Headphone</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 5.2pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">NA</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 5.4pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Removed Admin Rights</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 5.4pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">NA</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 5.6pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Licensed Software Removed</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 5.6pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">No Software Available</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 12.9pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Licensed Software Removed</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 12.9pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">No Software Available</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 13.1pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Licensed Software Removed</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 13.1pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">No Software Available</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 6.2pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Licensed Software Removed</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 6.2pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">No Software Available</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 6.35pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Data Backup.</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 6.35pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Not Required</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; text-indent: 0px; border-width: 1.5pt; borde=
+r-style: none solid solid; border-color: black; padding-right: 5.4pt; paddi=
+ng-left: 5.4pt; width: 161.7pt; height: 16.5pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Removed from AD</span></p>
+</td>
+<td style=3D"text-align: left; text-indent: 0px; border-right: 1.5pt solid =
+black; border-bottom: 1.5pt solid black; padding-right: 5.4pt; padding-left=
+: 5.4pt; width: 163.7pt; height: 16.5pt; box-sizing: border-box;">
+<p class=3D"skipProofing" style=3D"text-align: left; text-indent: 0px; marg=
+in: 0px; font-family: Aptos, sans-serif; font-size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif; font-size: 11pt; color: blac=
+k;">Yes</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"Signature" class=3D"elementToProof">
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px;">
+<span style=3D"font-family: Arial, Helvetica, sans-serif; font-size: 11pt; =
+color: rgb(36, 36, 36); background-color: white;">Thanks, and Regards</span=
+></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px;">
+<span style=3D"font-family: Arial, Helvetica, sans-serif; font-size: 11pt; =
+color: rgb(36, 36, 36); background-color: white;">Yogesh Sarode</span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px;">
+<span style=3D"font-family: Arial, Helvetica, sans-serif; font-size: 11pt; =
+color: rgb(36, 36, 36); background-color: white;">Information Technology</s=
+pan></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px;">
+<span style=3D"font-family: Arial, Helvetica, sans-serif; font-size: 11pt; =
+color: rgb(36, 36, 36); background-color: white;">Tata Communications Ltd.<=
+/span></p>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: white; margin: 0px;">
+<span style=3D"font-family: Arial, Helvetica, sans-serif; font-size: 11pt; =
+color: rgb(36, 36, 36); background-color: white;">Dighi Pune -411015&nbsp;I=
+ndia.</span></p>
+</div>
+</body>
+</html>
+
+--_000_TYZPR04MB4272EB4C1467E099FC52345CA8F72TYZPR04MB4272apcp_--

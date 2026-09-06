@@ -1,0 +1,1407 @@
+Delivered-To: ganeshomkar905@gmail.com
+Received: by 2002:a05:7010:5b28:b0:533:7ff7:5a35 with SMTP id br40csp859114mdb;
+        Tue, 30 Jun 2026 04:59:25 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AFNElJ+efBjbxCBl6Yc7l5ezJOpc2uFuTzeVshe0smlCdk/Z1egec22Os2ig3bunP7YpjOvYyBHVjdY7RTgWIGunWQ==@gmail.com
+X-Received: by 2002:a05:6a21:618e:b0:3bf:63af:84c with SMTP id adf61e73a8af0-3bfc52c181cmr2945051637.41.1782820764776;
+        Tue, 30 Jun 2026 04:59:24 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1782820764; cv=pass;
+        d=google.com; s=arc-20260327;
+        b=qfLRVwPQwry3TFkq2YDsmLO2W4BUoUpnbg6RSSbW3XDxQM9G0LayRHYo4SDBscC13n
+         VB9TTiVTxjq8mc/o3z8sj8CtAeio8sse0MdS6wDCKWHpl+mvlNUrf8iGEosiukYoftHy
+         giOWdT998bBCYMTMu6IlJGPpM9ttqQaezYrNejv0xO0twQvz0reY/PJhX8LTTNolVKAg
+         0a4ZrHnDT5P/AymGPr2ZWvCQwzPqeaZuWnIz/zAVSp5xpnbcsXPK+7c1NaaxXl0ZuvTu
+         xz1VpNU735tYmPuG8q9n5Csxe1iHb0mwmDlvMGw3TQTSzrhxh3Ndn7ktfIc+HNvOn3kq
+         cojA==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=original-authentication-results:mime-version
+         :authentication-results-original:msip_labels:content-language
+         :accept-language:in-reply-to:references:message-id:date:thread-index
+         :thread-topic:subject:cc:to:from:dkim-signature:dkim-signature;
+        bh=ctCD947WESFWcD+3YAAtfzGcpGlUupCHBSFXxLFW1Oo=;
+        fh=zMVJSut69aTH6zl5QiOJXxOiFr6f0fPBavaawpMlt0U=;
+        b=hbcXDEBA1ZEejvxYucM1H1byysFTg0Q3msaqfu6egda2T7tBVfSMFC5J3IdAIfOEBb
+         lIkuSOSJP5E+e/wNsLhBBDe867F6uV5VvjcWXtypjJlaPPosK3xBXuW3pQDx3/nFI+OU
+         /8QhgJZ6usrNJ3KT5i5esD5d1tXz8vKk369pjJYk0i1+/0hZXoJmuiaQShbnLCRDg9OK
+         tN0LSCnX+rU/DqHPiLthfXSMbECF8/TNjGvaq+qKi06ZIpfzk/zXjO8TB+KcKrqQRMqj
+         vfMicLKud9NDusnCcITrJEoJxg9gvc38HVfdMr2fG8bYOsioDSiz9LH8uoS+ghpibYB4
+         0IUw==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@tatacommunications.com header.s=selector2 header.b=JkIcN9cM;
+       dkim=pass header.i=@tatacommunications.com header.s=selector2 header.b=JkIcN9cM;
+       arc=pass (i=2 spf=pass spfdomain=tatacommunications.com dkim=pass dkdomain=tatacommunications.com dmarc=pass fromdomain=tatacommunications.com);
+       spf=pass (google.com: domain of etac@tatacommunications.com designates 2a01:111:f403:c405::5 as permitted sender) smtp.mailfrom=eTAC@tatacommunications.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=tatacommunications.com
+Return-Path: <eTAC@tatacommunications.com>
+Received: from TYPPR03CU001.outbound.protection.outlook.com (mail-japaneastazlp170120005.outbound.protection.outlook.com. [2a01:111:f403:c405::5])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-c9bc24fab2asi3402388a12.387.2026.06.30.04.59.24
+        for <ganeshomkar905@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 30 Jun 2026 04:59:24 -0700 (PDT)
+Received-SPF: pass (google.com: domain of etac@tatacommunications.com designates 2a01:111:f403:c405::5 as permitted sender) client-ip=2a01:111:f403:c405::5;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@tatacommunications.com header.s=selector2 header.b=JkIcN9cM;
+       dkim=pass header.i=@tatacommunications.com header.s=selector2 header.b=JkIcN9cM;
+       arc=pass (i=2 spf=pass spfdomain=tatacommunications.com dkim=pass dkdomain=tatacommunications.com dmarc=pass fromdomain=tatacommunications.com);
+       spf=pass (google.com: domain of etac@tatacommunications.com designates 2a01:111:f403:c405::5 as permitted sender) smtp.mailfrom=eTAC@tatacommunications.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=tatacommunications.com
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=hrHO0EV/4e3n+/MkyXVptW+JaOCW034EfcikR/HNP2eFnEZd/I5lkC3JMailnSburnABf8hAJ6tMTHihpe4sm+kco2L2Zfw4mYjiiEWfgesYGuOIUgfYd/rVr2D0kQSpKR8OH3MieERBMsQSxBO3Rht9A8QIv/xfpJN7p63ykVMNKXEuL/lf13tTqzZy3l7eX3Xm/PbeLQ7+5jOmXLcMf5aAakWwjZfvwd3povA69oY5JTJdHyhVN+jSb88SIjFIj/uq1MRvskZaXXdbcf/BDXh/5FUVuVBIgB5IIZ+yHfkUmNsGWeIqqq4CNNTmj+266ChZCskkMMDAigwE5vtWiA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ctCD947WESFWcD+3YAAtfzGcpGlUupCHBSFXxLFW1Oo=;
+ b=sFKFtiR7uBcafHPafn+A728gkx3lh/XlYEmGX4kHVZZQdOGc2ke2Z0IBI+eduDykB6oElbj7NV6F+nOlIUw+KMxTpy5Lo6Zco3osGmupeo06If51PTDfg5wB7c7NudAF5RIDBPUzHWhRS2vRQnA/CLEJE19gZpxp10iGJESBHbPzx936Yg5NFZvNGNeVGipfEvwXJVdxm21hxET+sbEaQbMIWGzMAPXhcOgR45nPZd5d0b4TapmhR0rOVOBQkX1vKTkLkSMbkNzBNRlH4aU9XjyfuIZi+FvuNub/w75DBigOPT7O+G8dmwRBvfdIi1pntNzbmlp/MeEGqTqG20QvpQ==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 3.104.39.150) smtp.rcpttodomain=gmail.com
+ smtp.mailfrom=tatacommunications.com; dmarc=pass (p=reject sp=reject pct=100)
+ action=none header.from=tatacommunications.com; dkim=pass (signature was
+ verified) header.d=tatacommunications.com; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=tatacommunications.com]
+ dkim=[1,1,header.d=tatacommunications.com]
+ dmarc=[1,1,header.from=tatacommunications.com])
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=tatacommunications.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ctCD947WESFWcD+3YAAtfzGcpGlUupCHBSFXxLFW1Oo=;
+ b=JkIcN9cMLpl9Q/UHCdYJUIGISIwC0ID6Ru/LEcqm88GSljmtQZKUzlLW/PXh8w68ZVCbIuQgvQbaFnaRpwdhE5VBhRjW8xyfA90TGHN4rl8gfkN15ZW77Zu3nsyywY+Pj/Erm9OuGma8+89Epsqj7FG+4XbQFHHEnM9I3nPWmbaND+1OE+IstYTiy4evPG70eAbH6w8BvfiXjJGA9oNZVzUEVthY1LUBkRx4fSaIhwCY8//KajMmTReC4x5wnxI6o8a6XHufDfZTNNPX65Y9nXtmuIO/FTvdciAyZETTWGb2Tge2CXoSVEMcKQfSwi7G9k3hy4uvjXrrkmQjahA3mg==
+Received: from TY4P301CA0038.JPNP301.PROD.OUTLOOK.COM (2603:1096:405:2be::7)
+ by KL1PR0401MB6585.apcprd04.prod.outlook.com (2603:1096:820:b3::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.181.8; Tue, 30 Jun
+ 2026 11:59:19 +0000
+Received: from TY2PEPF0000AB88.apcprd03.prod.outlook.com
+ (2603:1096:405:2be:cafe::70) by TY4P301CA0038.outlook.office365.com
+ (2603:1096:405:2be::7) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.159.19 via Frontend Transport; Tue,
+ 30 Jun 2026 11:59:19 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 3.104.39.150)
+ smtp.mailfrom=tatacommunications.com; dkim=pass (signature was verified)
+ header.d=tatacommunications.com;dmarc=pass action=none
+ header.from=tatacommunications.com;
+Received-SPF: Pass (protection.outlook.com: domain of tatacommunications.com
+ designates 3.104.39.150 as permitted sender) receiver=protection.outlook.com;
+ client-ip=3.104.39.150; helo=harakainline2-0d0b736d717d6e448; pr=C
+Received: from harakainline2-0d0b736d717d6e448 (3.104.39.150) by
+ TY2PEPF0000AB88.mail.protection.outlook.com (10.167.253.11) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.181.6 via Frontend Transport; Tue, 30 Jun 2026 11:59:19 +0000
+Received: from TYPPR03CU001.outbound.protection.outlook.com (mail-japaneastazon11012050.outbound.protection.outlook.com [52.101.126.50])
+	by harakainline2-0d0b736d717d6e448 (Haraka/2.8.24) with ESMTPS id 27873FC0-B620-402C-A7F9-AA754BD8B1F6.1
+	envelope-from <eTAC@tatacommunications.com>
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 verify=FAIL);
+	Tue, 30 Jun 2026 11:59:16 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=ed5/umXwAp+NY7ND1DNNl5TXEZVl0Ql7OHGCTbdwYN5vdwAvEU2CKymK4OVersnf9oi6K2oMZwsuz5C9Ql67nwKRYJKVDalZ/hcK1KkID3lt95Oa/wmoj4pFnImE4xq9PV3BQGrrzOQAIsP+u9v61KOQGD7TmdIjmmwvgOySc6gHKhf8qRkMybti2sZIyfmznidSXXhF78PkIgH8i/zbGR3rEQ9rXCR01tv3wIQ+9bhYUted/sLrfKohNt9rOIYgp4HmRplHvMoEV7TK+6kur85UTyCrdwWdWLwmUP+JxFo+xT3BJxe2XiR7Pzu4gewm6TGS+1qNtTgflG2pqdc2Ow==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ctCD947WESFWcD+3YAAtfzGcpGlUupCHBSFXxLFW1Oo=;
+ b=ODtLpG6CbjdDD+ABjK9cP1z2zxTsfF+IR5heVIKdwfif9oU/lgCEiwZvdBX7cGYqRRDFvI9OBQ0MUy2vkaTGHvI7psumSTEbOOYBGH9lsnbDrBLwVTIzoAi6P+GfJi05FI8L55qQq6ENEW9hUkaxxhSn3SgsVkloOPYlPaqWpfIUXyuICcQjYHrOKj0iuDQ/x+Z0seWdBFbDpTtXSYPVLzkUcuOrpe3pMqwcWTAr0FdJjQp/3cC/iyDrDRIszWYvrwS5RDrg/nS92mC3ubYPj6Uv5aqjAhN9HkYnfVeA+3Xm+zCwzIZm/rbqeNSB5hgvZlcQPQ3gmPwxQ+rgxUsxow==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=tatacommunications.com; dmarc=pass action=none
+ header.from=tatacommunications.com; dkim=pass
+ header.d=tatacommunications.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=tatacommunications.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ctCD947WESFWcD+3YAAtfzGcpGlUupCHBSFXxLFW1Oo=;
+ b=JkIcN9cMLpl9Q/UHCdYJUIGISIwC0ID6Ru/LEcqm88GSljmtQZKUzlLW/PXh8w68ZVCbIuQgvQbaFnaRpwdhE5VBhRjW8xyfA90TGHN4rl8gfkN15ZW77Zu3nsyywY+Pj/Erm9OuGma8+89Epsqj7FG+4XbQFHHEnM9I3nPWmbaND+1OE+IstYTiy4evPG70eAbH6w8BvfiXjJGA9oNZVzUEVthY1LUBkRx4fSaIhwCY8//KajMmTReC4x5wnxI6o8a6XHufDfZTNNPX65Y9nXtmuIO/FTvdciAyZETTWGb2Tge2CXoSVEMcKQfSwi7G9k3hy4uvjXrrkmQjahA3mg==
+Received: from SEZPR04MB7795.apcprd04.prod.outlook.com (2603:1096:101:21d::7)
+ by SI2PPFE784CAC21.apcprd04.prod.outlook.com (2603:1096:f:fff6::7ef) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.19; Tue, 30 Jun
+ 2026 11:59:13 +0000
+Received: from SEZPR04MB7795.apcprd04.prod.outlook.com
+ ([fe80::6b68:e500:f5e9:b996]) by SEZPR04MB7795.apcprd04.prod.outlook.com
+ ([fe80::6b68:e500:f5e9:b996%6]) with mapi id 15.21.0159.018; Tue, 30 Jun 2026
+ 11:59:12 +0000
+From: "IT Technical Assistance Center (eTAC)." <eTAC@tatacommunications.com>
+To: "Yogesh Sarode <contractor>"
+	<Yogesh.Sarode@contractor.tatacommunications.com>, "SHAILESH AROSKAR
+ <contractor>" <shailesh.aroskar@contractor.tatacommunications.com>,
+	"HARIENDRA KAMBLE <contractor>"
+	<hariendra.kamble1@contractor.tatacommunications.com>, ITAM SUPPORT TEAM
+	<itamsupport.team@tatacommunications.com>, Off boarding India
+	<OffboardingIndia@tatacommunications.com>
+CC: "GANESH JOSHI <contractor>"
+	<ganesh.v.joshi@contractor.tatacommunications.com>, DSS_Pune
+	<dss_pune@tatacommunications.onmicrosoft.com>, "ganeshomkar905@gmail.com"
+	<ganeshomkar905@gmail.com>, Sandeep Mane
+	<sandeep.mane@contractor.tatacommunications.com>
+Subject: RE: Laptop Surrender By Omkar Ganesh -- TT#REQTCL2681083
+Thread-Topic: Laptop Surrender By Omkar Ganesh -- TT#REQTCL2681083
+Thread-Index: Ad0Ih85UoXZUTTiiSUCKXY1md1ZCqA==
+Date: Tue, 30 Jun 2026 11:59:12 +0000
+Message-ID:
+ <SEZPR04MB7795A6CC6B5C964A469D3DF1B2F72@SEZPR04MB7795.apcprd04.prod.outlook.com>
+References:
+ <TYZPR04MB4272EB4C1467E099FC52345CA8F72@TYZPR04MB4272.apcprd04.prod.outlook.com>
+In-Reply-To:
+ <TYZPR04MB4272EB4C1467E099FC52345CA8F72@TYZPR04MB4272.apcprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+ MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_ContentBits=0;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_Enabled=True;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_Method=Privileged;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_Name=General;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_SetDate=2026-06-30T10:08:14.104Z;MSIP_Label_5cbf6393-50e2-4904-bc3e-1804619f2b03_SiteId=20210462-2c5e-4ec8-b3e2-0be950f292ca;
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=tatacommunications.com;
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-traffictypediagnostic:
+	SEZPR04MB7795:EE_|SI2PPFE784CAC21:EE_|TY2PEPF0000AB88:EE_|KL1PR0401MB6585:EE_
+X-MS-Office365-Filtering-Correlation-Id: 5032c5b5-16a8-4cc2-c0e6-08ded69f046a
+x-ms-exchange-usermailbox-routingagent-processed: True
+x-ld-processed: 20210462-2c5e-4ec8-b3e2-0be950f292ca,ExtAddr,ExtFwd
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted:
+ BCL:0;ARA:13230040|376014|366016|23010399003|1800799024|38070700021|13003099007|18002099003|22082099003|56012099006|6133799003|8096899003;
+X-Microsoft-Antispam-Message-Info-Original:
+ 0T2dCvjUlVHPvZdiEE148/bOP1lK5wpMYZkLI8jeOS6MnKeLjHlyIA1WYRApha05MBMUzf4tuZWbSq+QqclTRjCWrI5BC7e8Fz3I1XWodQnqViqOCX4t9+z1/2YDM20lgsozTcv1hobwxEwlRUwSuYsdbUycNnD3a7To5w8xeCowbp2/U+c3F6ErYV0X8oB4RfzlfSQtQPnNuby/s+72Lm4oxLoPr5139vCo62c7shMPNjGI6tZ8tdlSpsB3vs45A5j50R1mYHRHaWTgJ9rez449ZrQB0jYHiEPvvRxCGyZPEEuUVi6oyGgGT6tuOWqyYjm/F5kf8dp29QBFrtZ5ZjA5cBgKy8RpFP5TZ0bVuuXyK/UKTpNA90xRYvypKhIkfwJ81dAlu0UITL6mXKdkJlA8r4viKPkBr6tA7Dk2CI9fVgqt7l2tja1GR1lF6ibMjq511cTselVT+y007bWy+hfC2DR1eR/m6cT41+gdj5FBvL1HVIAIIb9RSrTMZV9GHHn8seaYXs+d3sM+OXAuQNdiKqnA90cj0kudxa1Kn54TZxftI2qvN+YpGFg8C0LHfgMKQsCbbZVJ1fuAhjF2c0vbmoDl8yzOCYY2vCKcU8GKkJMfbc5SRfhlQhB20H3pqCmzL2d0UZ+HJS1oxkGDqyvNanI6vNFI58/hK+EuWnQ=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEZPR04MB7795.apcprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(23010399003)(1800799024)(38070700021)(13003099007)(18002099003)(22082099003)(56012099006)(6133799003)(8096899003);DIR:OUT;SFP:1101;
+Content-Type: multipart/alternative;
+	boundary="_000_SEZPR04MB7795A6CC6B5C964A469D3DF1B2F72SEZPR04MB7795apcp_"
+MIME-Version: 1.0
+X-Exchange-RoutingPolicyChecked:
+ iad6CNxySq+YdWW9cYC+g3av/DJmpriRNLC25tTONroyS0sqadp/inQCdqJciIht0mDWY4jwVahe0XjjugYRdKb+u7jzpAM15mOgKzhyssfp4Fc9GrVYT4RpvnI/FdRwyPzBV5gmPfnBL1kzzHIqt1jkEAKmKRl0nizm8rQqWKMuHBzdaHERInkTD9f4ykOopYLaS6hXlvWIjH4zxzaXkVvyqZOjVAqgmI82gahjsiIVB2oHs5zICBG2fME+jpqQ0kWU74ScNlhWrN4rbErLPhPfn0BT7bTH323wi8rGYikvBfxvckyMUm2jdofCz1cn44VD0jm5xh8peq2Q62n46w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SI2PPFE784CAC21
+Original-Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=tatacommunications.com;
+X-SHN-DLP-SCAN: success
+Return-Path: eTAC@tatacommunications.com
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ TY2PEPF0000AB88.apcprd03.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+	d72fdc71-ba7e-4223-c96b-08ded69f0025
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|376014|23010399003|14060799003|1800799024|82310400026|36860700016|35042699022|6133799003|13003099007|8096899003|18002099003|22082099003|56012099006;
+X-Microsoft-Antispam-Message-Info:
+	+Dbg6IFamX4pgpqY4/4V4kWZFw/WMhfL+P14YT86JQsklQ5Re4X9xPfpcCjqz1DirQcsgYPUpYVf/a1wprh8WJyisWsB+wA7vN14Ipq5t3lm5004FaexNaawJK4V1+HejHzDE9g+9Wq+OjEMZXquGWFWrJEEB23oCDi9c0UzYRMd1NU8tlr7bH/nO/bADiXgBeo+AObXd02zW4Q7RQyCm0TrD/BANwvG5MgjhfT0uKzzU5GinooVhobW35epJHvs5fnp5iMfQEOQ5C/1WFcrufKht7dFBTjVq8RvifCNL8cVv5k2ZK2afn9EH1u1x1xhFJ0fVrELNYO8MwuM5TwCjjpOVDHFldc3lYwOLC7q8nOMNxNILLTyoI92OR25uwPEzAvmMUqwtIXK8EbIpkjDX7mb32Y02e1OpaxPe0dQ675tHRDK/YDoaQt3oeOobjRITvNXrob1mQp3x5wkyDkIgQ0fkJ4EkZ7NWRKH8uDztOOULPulCN/ByPKLTt223yzckadpkHV/4D/jj7y83B1MV8TEEt05EMWTyTuPB8k0BhOjTvJLO66YB4sfRT1ZB9mnqi5yD6gXDrjCQPfJOeqwagGAEqTGsGHzOk4oXXMtgMfzEz4GnceVTdhu1DwXQnV4bmbKNWJGhHQcGUEZOIjzFg==
+X-Forefront-Antispam-Report:
+	CIP:3.104.39.150;CTRY:AU;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:harakainline2-0d0b736d717d6e448;PTR:send2.mail-inline.syd1-pop.i-shn.net;CAT:NONE;SFS:(13230040)(376014)(23010399003)(14060799003)(1800799024)(82310400026)(36860700016)(35042699022)(6133799003)(13003099007)(8096899003)(18002099003)(22082099003)(56012099006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	0Hm3tMnWl9/+9lffNAkCy6la3M9RIBQRs4uwdPtDa4W7teuGgoczm3+Heq3tBsw2oh4wV8oXVrvSlkBiTvGMGMh9s6NhW8D4rmNFHnccMr8bvq2MWMzAZnKxX2wvdL2FkAsxhrlvWO0ticyFUwB5EE72VdExmAunBHp64bpUfzSAcgUU4d+boezQprmHVhfbb7vKE98YIGI58yBBXZviYHhI3PNHy2W/g4HmA8X5qtMQ2qT1VR75iSb/vuqLJMIs4Zn0lb+3hZDpQmo+moKNpsuHIP1m9IMTp5SUgR1ON5JFbY6pq4tj41clyHZCQzIsPRyW2oiEqT/ZYfFnGDP3/qI75rMrEmkNDSeOxAQ+upujXDK8z4SggNoMjq/F4WQRMCxYk42Bsz5xgJLj1wv+b4081iQa3aJmQsJtINr5dvpp/LsyBgs2LZ3uynS1SN0n
+X-OriginatorOrg: tatacommunications.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jun 2026 11:59:19.1349
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5032c5b5-16a8-4cc2-c0e6-08ded69f046a
+X-MS-Exchange-CrossTenant-Id: 20210462-2c5e-4ec8-b3e2-0be950f292ca
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=20210462-2c5e-4ec8-b3e2-0be950f292ca;Ip=[3.104.39.150];Helo=[harakainline2-0d0b736d717d6e448]
+X-MS-Exchange-CrossTenant-AuthSource:
+	TY2PEPF0000AB88.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: KL1PR0401MB6585
+
+--_000_SEZPR04MB7795A6CC6B5C964A469D3DF1B2F72SEZPR04MB7795apcp_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Team,
+
+We have raised TT# REQTCL2681083.
+
+
+Kindly note the AI Smart Agent has been launched Effective January 20, 2026=
+,  It can be accessed through the OnePlace portal.
+Moving forward, IT support will follow below Model
+
+  *   Primary channel: AI Chat Agent
+  *   Transitioning channels: Email, IVR (phone), MS Teams & the eTAC Light=
+ portal will remain available during the transition period and will be disc=
+ontinued thereafter to enable focused, real-time chat support.
+
+
+Thanks & Regards,
+Nagarjuna Reddy Bhavanam.
+To Raise query or issue
+? https://etaclite.tatacommunications.com/
+
+ETAC channel for assistance
+* - etac@tatacommunications.com<mailto:etac@tatacommunications.com>
+* - IP #5 or 5555| IND Toll Free 000-800-100-5555 |
+       US Toll Free: +1 800 901 9185 | INTL: +1-514-868-13333
+
+^<https://teams.microsoft.com/l/chat/0/0?users=3Detac@tatacommunications.co=
+m> <https://teams.microsoft.com/l/chat/0/0?users=3Detac@tatacommunications.=
+com>   eTAC-Chat<https://teams.microsoft.com/l/chat/0/0?users=3Detac@tataco=
+mmunications.com>
+Escalation Matrix
+Level
+Escalation Point
+Contact Email
+Level 1
+ETAC L1 Escalation
+etac.level1@tatacommunications.com<mailto:etac.level1@tatacommunications.co=
+m>
+Level 2
+ETAC L2 Escalation
+etac.level2@tatacommunications.com<mailto:etac.level2@tatacommunications.co=
+m>
+Level 3
+ETAC L3 Escalation
+etac.level3@tatacommunications.com<mailto:etac.level3@tatacommunications.co=
+m>
+
+
+From: Yogesh Sarode <contractor> <Yogesh.Sarode@contractor.tatacommunicatio=
+ns.com>
+Sent: Tuesday, June 30, 2026 3:38 PM
+To: SHAILESH AROSKAR <contractor> <shailesh.aroskar@contractor.tatacommunic=
+ations.com>; HARIENDRA KAMBLE <contractor> <hariendra.kamble1@contractor.ta=
+tacommunications.com>; ITAM SUPPORT TEAM <itamsupport.team@tatacommunicatio=
+ns.com>; Off boarding India <OffboardingIndia@tatacommunications.com>; IT T=
+echnical Assistance Center (eTAC). <eTAC@tatacommunications.com>
+Cc: GANESH JOSHI <contractor> <ganesh.v.joshi@contractor.tatacommunications=
+.com>; DSS_Pune <dss_pune@tatacommunications.onmicrosoft.com>; ganeshomkar9=
+05@gmail.com; Sandeep Mane <sandeep.mane@contractor.tatacommunications.com>
+Subject: Laptop Surrender By Omkar Ganesh
+
+
+Dear ITAM Team,
+
+
+
+Below mentioned Laptop has been Surrender by Employee Please updated in you=
+r record.
+
+
+
+Please provide NDC.
+
+
+
+Laptop Handover to IND_PUNE_DIGHI_CORAL_STORE
+
+
+
+Laptop mark as - In storage
+
+
+
+Dear Etac Team,
+
+
+
+Please open the new request for both SCTASK and assign it to me and IT asse=
+t team.
+
+
+
+Service Now Ticket Creation:
+
+Ticket Type
+
+Service request
+
+Category/Item
+
+Laptop Surrender By Omkar Ganesh
+*
+
+Caller email ID
+Omkar.Ganesh@contractor.tatacommunications.com<mailto:Omkar.Ganesh@contract=
+or.tatacommunications.com>
+
+hort Description
+
+Laptop Surrender
+
+Description
+
+Laptop Surrender
+
+Hostname
+
+TCL5D58BK3
+
+Assignee Group
+
+TCL DSS PUNE ASSET
+
+
+
+SDP Ticket No
+
+Username
+
+Omkar Ganesh
+
+Employee ID
+
+97201
+
+Department
+
+NA
+
+Make and Model
+
+Dell Latitude 5420
+
+Serial Number
+5D58BK3
+
+SAP NO.
+
+TCL5D58BK3
+
+Adapter
+
+YES
+
+Laptop Bag
+
+YES
+
+Wired Mouse
+
+YES
+
+Headphone
+
+NA
+
+Removed Admin Rights
+
+NA
+
+Licensed Software Removed
+
+No Software Available
+
+Licensed Software Removed
+
+No Software Available
+
+Licensed Software Removed
+
+No Software Available
+
+Licensed Software Removed
+
+No Software Available
+
+Data Backup.
+
+Not Required
+
+Removed from AD
+
+Yes
+
+
+
+Thanks, and Regards
+
+Yogesh Sarode
+
+Information Technology
+
+Tata Communications Ltd.
+
+Dighi Pune -411015 India.
+
+--_000_SEZPR04MB7795A6CC6B5C964A469D3DF1B2F72SEZPR04MB7795apcp_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel" xmlns:m=3D"http://schema=
+s.microsoft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html=
+40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:FluentSystemIcons;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Webdings;
+	panose-1:5 3 1 2 1 5 9 6 7 3;}
+@font-face
+	{font-family:"Aptos Narrow";}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#467886;
+	text-decoration:underline;}
+p.elementtoproof, li.elementtoproof, div.elementtoproof
+	{mso-style-name:elementtoproof;
+	margin:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p.skipproofing, li.skipproofing, div.skipproofing
+	{mso-style-name:skipproofing;
+	margin:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+span.EmailStyle22
+	{mso-style-type:personal-reply;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:90397907;
+	mso-list-template-ids:-1609023122;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:649795759;
+	mso-list-template-ids:1473571064;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:1044210218;
+	mso-list-template-ids:1918911564;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#467886" vlink=3D"#96607D" style=3D"word-wrap:=
+break-word">
+<div class=3D"WordSection1">
+<div>
+<div>
+<p class=3D"MsoNormal">Dear Team<b>,<o:p></o:p></b></p>
+<p class=3D"MsoNormal"><b><o:p>&nbsp;</o:p></b></p>
+<p class=3D"MsoNormal">We have raised TT# REQTCL2681083.<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><b>Kindly note the AI Smart Agent has been launched =
+Effective January 20, 2026</b>,
+<b>&nbsp;It can be accessed through the OnePlace portal.</b><o:p></o:p></p>
+<p class=3D"MsoNormal"><b>Moving forward, IT support will follow below Mode=
+l</b><o:p></o:p></p>
+<ul style=3D"margin-top:0in" type=3D"disc">
+<li class=3D"MsoNormal" style=3D"mso-list:l0 level1 lfo3"><b>Primary channe=
+l</b>: <b>
+AI Chat Agent</b><o:p></o:p></li><li class=3D"MsoNormal" style=3D"mso-list:=
+l0 level1 lfo3">Transitioning channels: Email, IVR (phone), MS Teams &amp; =
+the eTAC Light portal will remain available during the transition period an=
+d will be discontinued thereafter to enable focused, real-time chat support=
+.<o:p></o:p></li></ul>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+<div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><span style=3D"color:=
+#0C64C0">Thanks &amp; Regards,</span><o:p></o:p></p>
+<div style=3D"margin-bottom:12.0pt">
+<p class=3D"MsoNormal"><span style=3D"color:#0C64C0">Nagarjuna Reddy Bhavan=
+am.</span><span style=3D"color:#0C64C0"><o:p></o:p></span></p>
+</div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"511" style=3D"width:383.0pt;margin-left:.1pt;background:whi=
+te;border-collapse:collapse">
+<tbody>
+<tr style=3D"height:31.5pt">
+<td width=3D"508" colspan=3D"3" valign=3D"bottom" style=3D"width:381.2pt;bo=
+rder:solid windowtext 1.0pt;border-right:solid black 1.0pt;padding:0in 5.4p=
+t 0in 5.4pt;height:31.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-size:11.0pt;font-family:&quot;Aptos Narrow&quot;,sans-serif;co=
+lor:black">To Raise query or issue<br>
+</span><span style=3D"font-size:11.0pt;font-family:Webdings;color:black">&u=
+uml;</span><span style=3D"font-size:11.0pt;font-family:&quot;Aptos Narrow&q=
+uot;,sans-serif;color:black">&nbsp;</span><u><span style=3D"font-size:11.0p=
+t;font-family:&quot;Aptos Narrow&quot;,sans-serif;color:#467886"><a href=3D=
+"https://etaclite.tatacommunications.com/" target=3D"_blank" title=3D"Origi=
+nal URL: https://etaclite.tatacommunications.com/. Click or tap if you trus=
+t this link."><span style=3D"color:#467886">https://etaclite.tatacommunicat=
+ions.com/</span></a></span></u><o:p></o:p></p>
+</td>
+<td width=3D"2" style=3D"width:1.5pt;padding:0in 0in 0in 0in;height:31.5pt"=
+>
+<p class=3D"MsoNormal"><span style=3D"color:#242424">&nbsp;</span><o:p></o:=
+p></p>
+</td>
+<td width=3D"0" style=3D"width:.3pt;padding:0in 0in 0in 0in;height:31.5pt">=
+</td>
+</tr>
+<tr style=3D"height:48.0pt">
+<td width=3D"508" colspan=3D"3" rowspan=3D"3" style=3D"width:381.2pt;border=
+-top:none;border-left:solid windowtext 1.0pt;border-bottom:solid black 1.0p=
+t;border-right:solid black 1.0pt;background:#4D93D9;padding:0in 5.4pt 0in 5=
+.4pt;height:48.0pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Calibri&quot;,sa=
+ns-serif;color:white">ETAC channel for assistance<br>
+</span></b><b><span style=3D"font-family:Wingdings;color:white">-</span></b=
+><b><span style=3D"font-family:&quot;Calibri&quot;,sans-serif;color:white">=
+&nbsp;-
+<u><a href=3D"mailto:etac@tatacommunications.com" title=3D"mailto:etac@tata=
+communications.com"><span style=3D"color:white">etac@tatacommunications.com=
+</span></a></u><br>
+</span></b><b><span style=3D"font-family:Wingdings;color:white">(</span></b=
+><b><span style=3D"font-family:&quot;Calibri&quot;,sans-serif;color:white">=
+&nbsp;- IP #5 or 5555| IND Toll Free 000-800-100-5555 |<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;US Toll Free: +1 800 901 9185 | I=
+NTL: +1-514-868-13333</span></b><o:p></o:p></p>
+</td>
+<td width=3D"2" style=3D"width:1.5pt;padding:0in 0in 0in 0in;height:48.0pt"=
+>
+<p class=3D"MsoNormal"><span style=3D"color:#242424">&nbsp;</span><o:p></o:=
+p></p>
+</td>
+<td width=3D"0" style=3D"width:.3pt;padding:0in 0in 0in 0in;height:48.0pt">=
+</td>
+</tr>
+<tr style=3D"height:15.0pt">
+<td width=3D"2" valign=3D"bottom" style=3D"width:1.8pt;padding:0in 5.4pt 0i=
+n 5.4pt;height:15.0pt">
+</td>
+<td width=3D"0" style=3D"width:.3pt;padding:0in 0in 0in 0in;height:15.0pt">=
+</td>
+</tr>
+<tr style=3D"height:15.75pt">
+<td width=3D"2" valign=3D"bottom" style=3D"width:1.8pt;padding:0in 5.4pt 0i=
+n 5.4pt;height:15.75pt">
+</td>
+<td width=3D"0" style=3D"width:.3pt;padding:0in 0in 0in 0in;height:15.75pt"=
+></td>
+</tr>
+<tr style=3D"height:16.5pt">
+<td width=3D"508" colspan=3D"3" valign=3D"bottom" style=3D"width:381.2pt;bo=
+rder-top:none;border-left:solid windowtext 1.0pt;border-bottom:solid window=
+text 1.0pt;border-right:solid black 1.0pt;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:16.5pt">
+<p class=3D"MsoNormal"><u><span style=3D"font-size:11.0pt;font-family:Webdi=
+ngs;color:#467886"><a href=3D"https://teams.microsoft.com/l/chat/0/0?users=
+=3Detac@tatacommunications.com" target=3D"_blank" title=3D"Original URL: ht=
+tps://teams.microsoft.com/l/chat/0/0?users=3Detac@tatacommunications.com. C=
+lick or tap if you trust this link."><span style=3D"color:#467886">^</span>=
+</a></span></u><u><span style=3D"font-size:11.0pt;font-family:&quot;Aptos N=
+arrow&quot;,sans-serif;color:#467886"><a href=3D"https://teams.microsoft.co=
+m/l/chat/0/0?users=3Detac@tatacommunications.com" target=3D"_blank" title=
+=3D"Original URL: https://teams.microsoft.com/l/chat/0/0?users=3Detac@tatac=
+ommunications.com. Click or tap if you trust this link."><span style=3D"col=
+or:#467886">&nbsp;</span></a></span></u><u><span style=3D"font-size:11.0pt;=
+font-family:&quot;Calibri&quot;,sans-serif;color:#467886"><a href=3D"https:=
+//teams.microsoft.com/l/chat/0/0?users=3Detac@tatacommunications.com" targe=
+t=3D"_blank" title=3D"Original URL: https://teams.microsoft.com/l/chat/0/0?=
+users=3Detac@tatacommunications.com. Click or tap if you trust this link.">=
+<span style=3D"color:#467886">
+ &nbsp;eTAC-Chat</span></a></span></u><o:p></o:p></p>
+</td>
+<td width=3D"2" style=3D"width:1.8pt;padding:0in 5.4pt 0in 5.4pt;height:16.=
+5pt"></td>
+<td width=3D"0" style=3D"width:.3pt;padding:0in 0in 0in 0in;height:16.5pt">=
+</td>
+</tr>
+<tr style=3D"height:16.5pt">
+<td width=3D"508" colspan=3D"3" style=3D"width:381.2pt;border-top:none;bord=
+er-left:solid windowtext 1.0pt;border-bottom:solid windowtext 1.0pt;border-=
+right:solid black 1.0pt;background:#4D93D9;padding:0in 5.4pt 0in 5.4pt;heig=
+ht:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><b><spa=
+n style=3D"font-family:&quot;Calibri&quot;,sans-serif;color:white">Escalati=
+on Matrix</span></b><o:p></o:p></p>
+</td>
+<td width=3D"2" style=3D"width:1.8pt;padding:0in 5.4pt 0in 5.4pt;height:16.=
+5pt"></td>
+<td width=3D"0" style=3D"width:.3pt;padding:0in 0in 0in 0in;height:16.5pt">=
+</td>
+</tr>
+<tr style=3D"height:16.5pt">
+<td width=3D"60" style=3D"width:45.1pt;border-top:none;border-left:solid wi=
+ndowtext 1.0pt;border-bottom:solid windowtext 1.0pt;border-right:none;backg=
+round:#4D93D9;padding:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><b><spa=
+n style=3D"font-family:&quot;Calibri&quot;,sans-serif;color:white">Level</s=
+pan></b><o:p></o:p></p>
+</td>
+<td width=3D"156" style=3D"width:117.35pt;border:solid windowtext 1.0pt;bor=
+der-top:none;background:#4D93D9;padding:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><b><spa=
+n style=3D"font-family:&quot;Calibri&quot;,sans-serif;color:white">Escalati=
+on Point</span></b><o:p></o:p></p>
+</td>
+<td width=3D"292" style=3D"width:218.75pt;border-top:none;border-left:none;=
+border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;ba=
+ckground:#4D93D9;padding:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><b><spa=
+n style=3D"font-family:&quot;Calibri&quot;,sans-serif;color:white">Contact =
+Email</span></b><o:p></o:p></p>
+</td>
+<td width=3D"2" style=3D"width:1.8pt;padding:0in 5.4pt 0in 5.4pt;height:16.=
+5pt"></td>
+<td width=3D"0" style=3D"width:.3pt;padding:0in 0in 0in 0in;height:16.5pt">=
+</td>
+</tr>
+<tr style=3D"height:16.5pt">
+<td width=3D"60" style=3D"width:45.1pt;border:none;border-left:solid window=
+text 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-family:&quot;Calibri&quot;,sans-serif;color:black">Level 1</sp=
+an><o:p></o:p></p>
+</td>
+<td width=3D"156" style=3D"width:117.35pt;border-top:none;border-left:solid=
+ windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;pa=
+dding:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-family:&quot;Calibri&quot;,sans-serif;color:black">ETAC L1 Esc=
+alation</span><o:p></o:p></p>
+</td>
+<td width=3D"292" style=3D"width:218.75pt;border:none;border-right:solid wi=
+ndowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><u><spa=
+n style=3D"font-size:11.0pt;font-family:&quot;Aptos Narrow&quot;,sans-serif=
+;color:#467886"><a href=3D"mailto:etac.level1@tatacommunications.com" title=
+=3D"mailto:etac.level1@tatacommunications.com"><span style=3D"color:#467886=
+">etac.level1@tatacommunications.com</span></a></span></u><o:p></o:p></p>
+</td>
+<td width=3D"2" style=3D"width:1.8pt;padding:0in 5.4pt 0in 5.4pt;height:16.=
+5pt"></td>
+<td width=3D"0" style=3D"width:.3pt;padding:0in 0in 0in 0in;height:16.5pt">=
+</td>
+</tr>
+<tr style=3D"height:16.5pt">
+<td width=3D"60" style=3D"width:45.1pt;border:solid windowtext 1.0pt;border=
+-right:none;padding:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-family:&quot;Calibri&quot;,sans-serif;color:black">Level 2</sp=
+an><o:p></o:p></p>
+</td>
+<td width=3D"156" style=3D"width:117.35pt;border:solid windowtext 1.0pt;pad=
+ding:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-family:&quot;Calibri&quot;,sans-serif;color:black">ETAC L2 Esc=
+alation</span><o:p></o:p></p>
+</td>
+<td width=3D"292" style=3D"width:218.75pt;border:solid windowtext 1.0pt;bor=
+der-left:none;padding:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><u><spa=
+n style=3D"font-size:11.0pt;font-family:&quot;Aptos Narrow&quot;,sans-serif=
+;color:#467886"><a href=3D"mailto:etac.level2@tatacommunications.com" title=
+=3D"mailto:etac.level2@tatacommunications.com"><span style=3D"color:#467886=
+">etac.level2@tatacommunications.com</span></a></span></u><o:p></o:p></p>
+</td>
+<td width=3D"2" style=3D"width:1.8pt;padding:0in 5.4pt 0in 5.4pt;height:16.=
+5pt"></td>
+<td width=3D"0" style=3D"width:.3pt;padding:0in 0in 0in 0in;height:16.5pt">=
+</td>
+</tr>
+<tr style=3D"height:16.5pt">
+<td width=3D"60" style=3D"width:45.1pt;border-top:none;border-left:solid wi=
+ndowtext 1.0pt;border-bottom:solid windowtext 1.0pt;border-right:none;paddi=
+ng:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-family:&quot;Calibri&quot;,sans-serif;color:black">Level 3</sp=
+an><o:p></o:p></p>
+</td>
+<td width=3D"156" style=3D"width:117.35pt;border:solid windowtext 1.0pt;bor=
+der-top:none;padding:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-family:&quot;Calibri&quot;,sans-serif;color:black">ETAC L3 Esc=
+alation</span><o:p></o:p></p>
+</td>
+<td width=3D"292" style=3D"width:218.75pt;border-top:none;border-left:none;=
+border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;pa=
+dding:0in 5.4pt 0in 5.4pt;height:16.5pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><u><spa=
+n style=3D"font-size:11.0pt;font-family:&quot;Aptos Narrow&quot;,sans-serif=
+;color:#467886"><a href=3D"mailto:etac.level3@tatacommunications.com" title=
+=3D"mailto:etac.level3@tatacommunications.com"><span style=3D"color:#467886=
+">etac.level3@tatacommunications.com</span></a></span></u><o:p></o:p></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in;height:16.5pt"></td>
+<td style=3D"padding:0in 0in 0in 0in;height:16.5pt"></td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+<div>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif">From:</span></b><span style=3D"font-size:11.0pt;=
+font-family:&quot;Calibri&quot;,sans-serif"> Yogesh Sarode &lt;contractor&g=
+t; &lt;Yogesh.Sarode@contractor.tatacommunications.com&gt;
+<br>
+<b>Sent:</b> Tuesday, June 30, 2026 3:38 PM<br>
+<b>To:</b> SHAILESH AROSKAR &lt;contractor&gt; &lt;shailesh.aroskar@contrac=
+tor.tatacommunications.com&gt;; HARIENDRA KAMBLE &lt;contractor&gt; &lt;har=
+iendra.kamble1@contractor.tatacommunications.com&gt;; ITAM SUPPORT TEAM &lt=
+;itamsupport.team@tatacommunications.com&gt;; Off boarding India
+ &lt;OffboardingIndia@tatacommunications.com&gt;; IT Technical Assistance C=
+enter (eTAC). &lt;eTAC@tatacommunications.com&gt;<br>
+<b>Cc:</b> GANESH JOSHI &lt;contractor&gt; &lt;ganesh.v.joshi@contractor.ta=
+tacommunications.com&gt;; DSS_Pune &lt;dss_pune@tatacommunications.onmicros=
+oft.com&gt;; ganeshomkar905@gmail.com; Sandeep Mane &lt;sandeep.mane@contra=
+ctor.tatacommunications.com&gt;<br>
+<b>Subject:</b> Laptop Surrender By Omkar Ganesh<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Dear ITAM=
+&nbsp;Team,</span><o:p></o:p></p>
+<div id=3D"x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_Signature">
+<div id=3D"x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_Signature"=
+>
+<p class=3D"elementtoproof" style=3D"background:white"><o:p>&nbsp;</o:p></p=
+>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Below men=
+tioned Laptop has been
+<span style=3D"background:yellow">Surrender</span>&nbsp;by Employee Please =
+updated in your record.</span><o:p></o:p></p>
+<p class=3D"elementtoproof" style=3D"background:white"><o:p>&nbsp;</o:p></p=
+>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:black;background=
+:yellow">Please provide NDC.</span><o:p></o:p></p>
+<p class=3D"elementtoproof" style=3D"background:white"><o:p>&nbsp;</o:p></p=
+>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Laptop Ha=
+ndover to IND_PUNE_DIGHI_CORAL_STORE</span><o:p></o:p></p>
+<p class=3D"elementtoproof" style=3D"background:white"><o:p>&nbsp;</o:p></p=
+>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:black;background=
+:yellow">Laptop mark as - In storage</span><o:p></o:p></p>
+<p class=3D"elementtoproof" style=3D"background:white"><o:p>&nbsp;</o:p></p=
+>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Dear&nbsp=
+;Etac&nbsp;Team,</span><o:p></o:p></p>
+<p class=3D"elementtoproof" style=3D"background:white"><o:p>&nbsp;</o:p></p=
+>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Please op=
+en the new
+<span style=3D"background:yellow">request for both SCTASK</span>&nbsp;and a=
+ssign it to me and IT asset&nbsp;team.</span><o:p></o:p></p>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:15.0pt;font-family:&quot;FluentSystemIcons&quot;,serif;color:black;bac=
+kground:#424242"><br>
+<br>
+</span><o:p></o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"519" style=3D"width:389.55pt;border-collapse:collapse;box-s=
+izing: border-box;border-spacing: 0px" id=3D"x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_=
+x_x_x_x_x_x_x_x_table_0">
+<tbody>
+<tr style=3D"height:15.0pt">
+<td width=3D"518" colspan=3D"2" style=3D"width:388.55pt;border:solid black =
+1.0pt;padding:.75pt .75pt .75pt .75pt;height:15.0pt;box-sizing: border-box"=
+>
+<p class=3D"skipproofing"><b><span style=3D"font-size:11.0pt;font-family:&q=
+uot;Arial&quot;,sans-serif;color:black">Service Now&nbsp;Ticket&nbsp;Creati=
+on:</span></b><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:11.25pt">
+<td width=3D"132" style=3D"width:98.7pt;border:solid black 1.0pt;border-top=
+:none;padding:.75pt .75pt .75pt .75pt;height:11.25pt;box-sizing: border-box=
+">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Ticket&nbsp;Type</span><o:p></o:p></p>
+</td>
+<td width=3D"386" style=3D"width:289.85pt;border-top:none;border-left:none;=
+border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:.75p=
+t .75pt .75pt .75pt;height:11.25pt;box-sizing: border-box">
+<p class=3D"skipproofing"><b><span style=3D"font-size:11.0pt;font-family:&q=
+uot;Arial&quot;,sans-serif;color:black">Service request</span></b><o:p></o:=
+p></p>
+</td>
+</tr>
+<tr style=3D"height:11.25pt">
+<td width=3D"132" style=3D"width:98.7pt;border:solid black 1.0pt;border-top=
+:none;padding:.75pt .75pt .75pt .75pt;height:11.25pt;box-sizing: border-box=
+">
+<p class=3D"skipproofing"><b><span style=3D"font-size:11.0pt;font-family:&q=
+uot;Arial&quot;,sans-serif;color:black">Category/Item</span></b><o:p></o:p>=
+</p>
+</td>
+<td width=3D"386" style=3D"width:289.85pt;border-top:none;border-left:none;=
+border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:.75p=
+t .75pt .75pt .75pt;height:11.25pt;box-sizing: border-box">
+<p class=3D"skipproofing" style=3D"line-height:24.0pt"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Laptop Su=
+rrender By Omkar Ganesh</span><o:p></o:p></p>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-left:.5in;text-indent:0in;mso-list:l=
+2 level1 lfo1">
+<![if !supportLists]><span style=3D"font-size:10.0pt;font-family:Symbol;col=
+or:black"><span style=3D"mso-list:Ignore">&middot;<span style=3D"font:7.0pt=
+ &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:11.0pt;font-family:=
+&quot;Arial&quot;,sans-serif;color:black"><o:p>&nbsp;</o:p></span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"skipproofing"><b><span style=3D"font-size:11.0pt;font-family:&q=
+uot;Arial&quot;,sans-serif;color:black">Caller email ID</span></b><o:p></o:=
+p></p>
+<p class=3D"MsoNormal"><span style=3D"color:black"><a href=3D"mailto:Omkar.=
+Ganesh@contractor.tatacommunications.com">Omkar.Ganesh@contractor.tatacommu=
+nications.com</a><o:p></o:p></span></p>
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">hort Description</span><o:p></o:p></p>
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Laptop Surrender</span><o:p></o:p></p>
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Description</span><o:p></o:p></p>
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Laptop Surrender</span><o:p></o:p></p>
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Hostname</span><o:p></o:p></p>
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">TCL5D58BK3</span><o:p></o:p></p>
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Assignee Group</span><o:p></o:p></p>
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">TCL DSS PUNE ASSET</span><o:p></o:p></=
+p>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:15.0pt;font-family:&quot;FluentSystemIcons&quot;,serif;color:black;bac=
+kground:#424242"><br>
+<br>
+</span><o:p></o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"436" style=3D"width:326.9pt;background:white;border-collaps=
+e:collapse;box-sizing: border-box;border-spacing: 0px" id=3D"x_x_x_x_x_x_x_=
+x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x=
+_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_=
+x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x=
+_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_table_=
+0">
+<tbody>
+<tr style=3D"height:16.5pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;padding:0=
+in 5.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">SDP Ticket No</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border:solid black 1.5pt;border-le=
+ft:none;padding:0in 5.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+</td>
+</tr>
+<tr style=3D"height:11.15pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:11.15pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Username</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:11.15pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Omkar Ganesh</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:6.35pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:6.35pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Employee ID</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:6.35pt;box-sizing: border-box">
+<p class=3D"skipproofing"><b><span style=3D"font-size:11.0pt;font-family:&q=
+uot;Arial&quot;,sans-serif;color:black">97201</span></b><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:11.6pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:11.6pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Department</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:11.6pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">NA</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:16.5pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Make and Model</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+<p class=3D"elementtoproof"><span style=3D"font-size:11.0pt;font-family:&qu=
+ot;Arial&quot;,sans-serif;color:black">Dell Latitude 5420</span><o:p></o:p>=
+</p>
+</td>
+</tr>
+<tr style=3D"height:16.5pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Serial Number</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+<p class=3D"MsoNormal"><span style=3D"color:black">5D58BK3<o:p></o:p></span=
+></p>
+</td>
+</tr>
+<tr style=3D"height:16.5pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">SAP NO.</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">TCL5D58BK3</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:7.4pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:7.4pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Adapter</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:7.4pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">YES</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:13.1pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:13.1pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Laptop Bag</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:13.1pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">YES</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:16.5pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Wired Mouse</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">YES</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:5.2pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:5.2pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Headphone</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:5.2pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">NA</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:5.4pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:5.4pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Removed Admin Rights</span><o:p></o:p>=
+</p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:5.4pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">NA</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:5.6pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:5.6pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Licensed Software Removed</span><o:p><=
+/o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:5.6pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">No Software Available</span><o:p></o:p=
+></p>
+</td>
+</tr>
+<tr style=3D"height:12.9pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:12.9pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Licensed Software Removed</span><o:p><=
+/o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:12.9pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">No Software Available</span><o:p></o:p=
+></p>
+</td>
+</tr>
+<tr style=3D"height:13.1pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:13.1pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Licensed Software Removed</span><o:p><=
+/o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:13.1pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">No Software Available</span><o:p></o:p=
+></p>
+</td>
+</tr>
+<tr style=3D"height:6.2pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:6.2pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Licensed Software Removed</span><o:p><=
+/o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:6.2pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">No Software Available</span><o:p></o:p=
+></p>
+</td>
+</tr>
+<tr style=3D"height:6.35pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:6.35pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Data Backup.</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:6.35pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Not Required</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:16.5pt">
+<td width=3D"216" style=3D"width:161.7pt;border:solid black 1.5pt;border-to=
+p:none;padding:0in 5.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Removed from AD</span><o:p></o:p></p>
+</td>
+<td width=3D"218" style=3D"width:163.7pt;border-top:none;border-left:none;b=
+order-bottom:solid black 1.5pt;border-right:solid black 1.5pt;padding:0in 5=
+.4pt 0in 5.4pt;height:16.5pt;box-sizing: border-box">
+<p class=3D"skipproofing"><span style=3D"font-size:11.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;color:black">Yes</span><o:p></o:p></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black"><o:p>&nbsp;</o:p></span>=
+</p>
+</div>
+<div id=3D"Signature">
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black"><o:p>&nbsp;</o:p></span>=
+</p>
+</div>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#242424;backgrou=
+nd:white">Thanks, and Regards</span><o:p></o:p></p>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#242424;backgrou=
+nd:white">Yogesh Sarode</span><o:p></o:p></p>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#242424;backgrou=
+nd:white">Information Technology</span><o:p></o:p></p>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#242424;backgrou=
+nd:white">Tata Communications Ltd.</span><o:p></o:p></p>
+<p class=3D"elementtoproof" style=3D"background:white"><span style=3D"font-=
+size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#242424;backgrou=
+nd:white">Dighi Pune -411015&nbsp;India.</span><o:p></o:p></p>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+--_000_SEZPR04MB7795A6CC6B5C964A469D3DF1B2F72SEZPR04MB7795apcp_--
